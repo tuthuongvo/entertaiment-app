@@ -1,0 +1,9 @@
+.btn-primary {
+    @apply inline-block bg-primary font-medium text-base leading-6 rounded-full py-3 px-7;
+}
+.btn-secondary {
+    @apply inline-block bg-gray-900 font-medium text-base leading-6 rounded-full py-3 px-7;
+}
+.btn-link {
+  @apply flex items-center gap-2 font-normal text-sm leading-5 text-gray-200;
+}

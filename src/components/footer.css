@@ -1,0 +1,8 @@
+.footer {
+  .navbar {
+    .nav-item.center{
+        @apply h-[49px] bg-primary rounded-xl -mt-4 py-2 px-4;
+        box-shadow: 0px 2px 4px rgba(255, 55, 55, 0.5);
+    }
+  }
+}

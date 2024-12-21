@@ -1,0 +1,4 @@
+.nav-menu {
+    @apply fixed top-0 left-0 bottom-0 z-50 p-5 flex flex-col items-center gap-4 w-[320px];
+    background: linear-gradient(180deg, #B1062E 0%, #1E1111 50.06%);   
+}

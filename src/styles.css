@@ -1,0 +1,12 @@
+@import "tailwindcss/base";
+@import "tailwindcss/components";
+@import "tailwindcss/utilities";
+
+/* .head {
+    @apply text-2xl font-bold text-blue-500;
+} */
+@import "components/theme.css";
+@import "components/swiper.css";
+@import "components/button.css";
+@import "components/header.css";
+@import "components/footer.css";
