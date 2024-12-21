@@ -35,9 +35,9 @@ body {
   @apply w-full overflow-x-auto whitespace-nowrap flex;
   -ms-overflow-style: none;
   scrollbar-width: none;
-  .scroll-item {
+}
+.scroll-container .scroll-item {
     @apply flex-shrink-0 basis-56;
-  };
 }
 
 .scroll-container::-webkit-scrollbar {
@@ -50,18 +50,14 @@ body {
 .scroll-item:last-child {
   @apply mr-0;
 }
-.card.scroll-container {
-  .item {
-    @apply flex-shrink-0 basis-[106px];
-  }
-  .item:last-child {
-    @apply mr-0;
-  }
+.card.scroll-container .item{
+  @apply flex-shrink-0 basis-[106px];
 }
-.card.scroll-container.book {
-  .item {
-    @apply flex-shrink-0 basis-[120px];
-  }
+.card.scroll-container .item:last-child {
+  @apply mr-0;
+}
+.card.scroll-container.book .item{
+  @apply flex-shrink-0 basis-[120px];
 }
 
 .label-chapter {
@@ -70,8 +66,8 @@ body {
 }
 .modal-language {
   @apply fixed left-0 right-0 bottom-0;
-  .modal-content {
-    @apply  bg-mainBlack rounded-s-lg p-5;
-    box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.08);
-  }
+}
+.modal-language .modal-content {
+  @apply  bg-mainBlack rounded-s-lg p-5;
+  box-shadow: 0px -2px 4px rgba(0, 0, 0, 0.08);
 }
