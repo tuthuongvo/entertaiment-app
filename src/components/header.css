@@ -1,4 +1,27 @@
 .nav-menu {
-    @apply fixed top-0 left-0 bottom-0 z-50 p-5 flex flex-col items-center gap-4 w-[320px];
-    background: linear-gradient(180deg, #B1062E 0%, #1E1111 50.06%);   
+    @apply fixed top-0 left-0 bottom-0 z-50 p-5 flex flex-col items-center gap-4 w-[320px] max-h-full overflow-y-auto;
+    background: linear-gradient(180deg, #B1062E 0%, #1E1111 50.06%);  
+    scrollbar-width: none; /* For Firefox */
+    -ms-overflow-style: none;  /* For Internet Explorer and Edge */ 
+}
+.nav-menu::-webkit-scrollbar {
+    display: none; /* For Chrome, Safari, and Opera */
+}
+.nav-feature {
+    @apply w-full;
+}
+.logged .nav-header {
+    @apply hidden;
+}
+.logged .nav-feature {
+    @apply p-5;
+    background: radial-gradient(110.61% 110.61% at 50% -10.61%, #B1062E 0%, #1E1111 100%);
+}
+.logged .nav-menu {
+    @apply p-0;
+    background: linear-gradient(180deg, #050505 0%, #2D0C0C 100%);
+}
+.logged .nav-menu-content,
+.logged .nav-menu-account {
+    @apply p-5;
 }
