@@ -15,7 +15,13 @@ module.exports = {
       colors: {
         mainBlack: "#010101", // Define your custom color with a name
         primary: "#D11030",
-        grey: "#292929",
+        grey: {
+          DEFAULT: "#292929",
+          light: "#B2B2B2",
+        },
+        blue: {
+          DEFAULT: "#6B87F9",
+        },
       },
       container: {
         center: true, // Centers the container by default

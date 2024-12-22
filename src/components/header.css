@@ -7,6 +7,9 @@
 .nav-menu::-webkit-scrollbar {
     display: none; /* For Chrome, Safari, and Opera */
 }
+.nav-menu-account {
+    @apply hidden
+}
 .nav-feature {
     @apply w-full;
 }
@@ -24,4 +27,7 @@
 .logged .nav-menu-content,
 .logged .nav-menu-account {
     @apply p-5;
+}
+.logged .nav-menu-account {
+    @apply block;
 }

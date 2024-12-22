@@ -1,0 +1,8 @@
+input {
+    @apply block w-full h-14 bg-black font-medium rounded-lg py-4 px-3 border border-grey focus:border-primary focus-visible:outline-0 placeholder:text-grey-light placeholder:font-medium;
+}
+.fieldset {
+    .field {
+        @apply relative;
+    }
+}
