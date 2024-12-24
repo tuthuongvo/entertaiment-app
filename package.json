@@ -1,23 +1,38 @@
 {
   "name": "entertaiment-app",
   "version": "1.0.0",
-  "description": "",
   "main": "index.js",
   "scripts": {
-    "watch": "npx tailwindcss -i ./src/styles.css -o ./dist/styles.css --watch",
-    "build": "npx tailwindcss -i ./src/styles.css -o ./dist/styles.css "
+    "build:html": "node xbuilder.html.js",
+    "build:css": "node xbuilder.css.js",
+    "build:js": "node xbuilder.js.js",
+    "watch:html": "node xbuilder.html.js --watch",
+    "watch:css": "node xbuilder.css.js --watch",
+    "watch:js": "node xbuilder.js.js --watch",
+    "build": "rm -rf public/*.html && rm -rf public/css && rm -rf public/js && rm -rf public/components  && node xbuilder.html.js && node xbuilder.css.js && node xbuilder.js.js",
+    "start": "npm run build && npm-run-all --parallel watch:html watch:css watch:js"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
+  "description": "",
   "devDependencies": {
+    "@babel/core": "^7.26.0",
+    "@babel/preset-env": "^7.26.0",
+    "@fullhuman/postcss-purgecss": "^6.0.0",
     "autoprefixer": "^10.4.20",
-    "postcss": "^8.4.49",
-    "tailwindcss": "^3.4.17"
+    "chokidar": "^3.5.3",
+    "cssnano": "^7.0.6",
+    "npm-run-all": "^4.1.5",
+    "postcss-cli": "^11.0.0",
+    "postcss-import": "^16.1.0",
+    "purgecss": "^6.0.0",
+    "tailwindcss": "^3.4.14",
+    "terser": "^5.36.0"
   },
   "dependencies": {
-    "alpinejs": "^3.14.7",
-    "postcss-import": "^16.1.0",
-    "swiper": "^11.1.15"
+    "@tailwindcss/aspect-ratio": "^0.4.2",
+    "@tailwindcss/line-clamp": "^0.4.4",
+    "tailwind-scrollbar": "^3.1.0"
   }
 }

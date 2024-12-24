@@ -1,0 +1,94 @@
+<div class="hero-banner rounded-b-xl overflow-hidden">
+    <div x-data="swiperBanner()" class="swiper-slider">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide relative">
+                    <div class="feature-img">
+                        <img class="object-cover w-full h-[335px]" src="./image/hero-banner.png" alt="">
+                    </div>
+                    <div class="title absolute w-full px-2 top-16 left-1/2 transform -translate-x-1/2">
+                        <p class="font-normal text-2xl leading-10 text-center tracking-tighter">App Hẹn Hò, Xem Phim,
+                            Đọc Truyện, Chơi Game
+                            <br>
+                            <span class="text-3xl font-semibold mt-9 block">All In One</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide relative">
+                    <div class="feature-img">
+                        <img class="object-cover w-full h-[335px]" src="./image/hero-banner.png" alt="">
+                    </div>
+                    <div class="title absolute w-full px-2 top-16 left-1/2 transform -translate-x-1/2">
+                        <p class="font-normal text-2xl leading-10 text-center tracking-tighter">App Hẹn Hò, Xem Phim,
+                            Đọc Truyện, Chơi Game
+                            <br>
+                            <span class="text-3xl font-semibold mt-9 block">All In One</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide relative">
+                    <div class="feature-img">
+                        <img class="object-cover w-full h-[335px]" src="./image/hero-banner.png" alt="">
+                    </div>
+                    <div class="title absolute w-full px-2 top-16 left-1/2 transform -translate-x-1/2">
+                        <p class="font-normal text-2xl leading-10 text-center tracking-tighter">App Hẹn Hò, Xem Phim,
+                            Đọc Truyện, Chơi Game
+                            <br>
+                            <span class="text-3xl font-semibold mt-9 block">All In One</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide relative">
+                    <div class="feature-img">
+                        <img class="object-cover w-full h-[335px]" src="./image/hero-banner.png" alt="">
+                    </div>
+                    <div class="title absolute w-full px-2 top-16 left-1/2 transform -translate-x-1/2">
+                        <p class="font-normal text-2xl leading-10 text-center tracking-tighter">App Hẹn Hò, Xem Phim,
+                            Đọc Truyện, Chơi Game
+                            <br>
+                            <span class="text-3xl font-semibold mt-9 block">All In One</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>
+<script>
+    function swiperBanner() {
+        return {
+            swiper: null,
+            autoplay: true,
+            initSwiper() {
+                this.swiper = new Swiper('.swiper', {
+                    direction: 'horizontal',
+                    loop: true,
+                    autoplay: this.autoplay ? {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    } : false,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                });
+            },
+            toggleAutoplay() {
+                this.autoplay = !this.autoplay;
+                this.swiper.params.autoplay = this.autoplay ? {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                } : false;
+                this.swiper.update();
+            },
+            init() {
+                this.initSwiper();
+            }
+        }
+    }
+</script>

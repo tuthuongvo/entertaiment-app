@@ -1,6 +1,11 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./*.html", "./src/**/*.{css,js,ts,jsx,tsx}"],
+  content: [
+    "./public/**/*.html",
+    "./public/*.html",
+    "./src/*.{html,css,js,ts,jsx,tsx}",
+    "./src/**/*.{html,css,js,ts,jsx,tsx}",
+  ],
   theme: {
     screens: {
       sm: "420px",
@@ -23,11 +28,18 @@ module.exports = {
           DEFAULT: "#6B87F9",
         },
       },
+      gridTemplateColumns: {
+        user: "repeat(auto-fit, minmax(76px, 1fr))",
+      },
       container: {
         center: true, // Centers the container by default
         // padding: "2rem", // Adds padding to the container
         screens: {
-          sm: "420px",
+          sm: "420px", // Mobile Small
+          md: "768px", // Tablet
+          lg: "1024px", // Laptop
+          xl: "1280px", // Desktop
+          "2xl": "1536px", // Large Desktop
         },
       },
     },
