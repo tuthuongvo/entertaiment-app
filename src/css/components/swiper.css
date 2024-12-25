@@ -3,3 +3,12 @@
         @apply w-full;
     }
 }
+.swiper-pagination {
+    @apply !w-auto bg-grey rounded-xl p-2;
+}
+.swiper-pagination-bullet {
+    @apply !static bg-grey-50 opacity-100 rounded-sm w-[10px] h-[10px] !rotate-45;
+}
+.swiper-pagination-bullets-dynamic .swiper-pagination-bullet-active {
+    @apply bg-primary;
+}

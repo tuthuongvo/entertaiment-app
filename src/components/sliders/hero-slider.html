@@ -59,9 +59,9 @@
     function swiperBanner() {
         return {
             swiper: null,
-            autoplay: true,
+            autoplay: false,
             initSwiper() {
-                this.swiper = new Swiper('.swiper', {
+                this.swiper = new Swiper('.hero-banner .swiper', {
                     direction: 'horizontal',
                     loop: true,
                     autoplay: this.autoplay ? {
@@ -71,6 +71,7 @@
                     pagination: {
                         el: '.swiper-pagination',
                         clickable: true,
+                        dynamicBullets: true, // Add this line to enable dynamic bullets
                     },
                     navigation: {
                         nextEl: '.swiper-button-next',

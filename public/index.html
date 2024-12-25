@@ -275,9 +275,9 @@
     function swiperBanner() {
         return {
             swiper: null,
-            autoplay: true,
+            autoplay: false,
             initSwiper() {
-                this.swiper = new Swiper('.swiper', {
+                this.swiper = new Swiper('.hero-banner .swiper', {
                     direction: 'horizontal',
                     loop: true,
                     autoplay: this.autoplay ? {
@@ -287,6 +287,7 @@
                     pagination: {
                         el: '.swiper-pagination',
                         clickable: true,
+                        dynamicBullets: true, // Add this line to enable dynamic bullets
                     },
                     navigation: {
                         nextEl: '.swiper-button-next',
@@ -1383,8 +1384,8 @@
 
             </a>
         </div>
-        <div class="addition-content overflow-hidden">
-            <div x-data="swiperAddition()" class="swiper-slider w-[240px]">
+        <div class="addition-content pb-14 overflow-hidden">
+            <div x-data="swiperAddition()" class="swiper-slider w-[224px]">
                 <div class="swiper !overflow-visible">
                     <div class="swiper-wrapper">
                         <div class="swiper-slide">
@@ -1464,7 +1465,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="swiper-pagination"></div>
+                    <div class="swiper-pagination !-bottom-9"></div>
                 </div>
             </div>
         </div>
@@ -1476,17 +1477,15 @@
         return {
             swiper: null,
             autoplay: false,
-            initSwiper() {
-                this.swiper = new Swiper('.swiper', {
+            initSwiperAddition() {
+                this.swiper = new Swiper('.addition-content .swiper', {
                     direction: 'horizontal',
-                    loop: false,
-                    // autoplay: this.autoplay ? {
-                    //     delay: 3000,
-                    //     disableOnInteraction: false,
-                    // } : false,
+                    loop: true,
+                    spaceBetween: 20,
                     pagination: {
                         el: '.swiper-pagination',
                         clickable: true,
+                        dynamicBullets: true,
                     },
                     navigation: {
                         nextEl: '.swiper-button-next',
@@ -1494,16 +1493,8 @@
                     },
                 });
             },
-            // toggleAutoplay() {
-            //     // this.autoplay = !this.autoplay;
-            //     this.swiper.params.autoplay = this.autoplay ? {
-            //         delay: 3000,
-            //         disableOnInteraction: false,
-            //     } : false;
-            //     this.swiper.update();
-            // },
             init() {
-                this.initSwiper();
+                this.initSwiperAddition();
             }
         }
     }
