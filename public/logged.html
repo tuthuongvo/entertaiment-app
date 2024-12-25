@@ -94,7 +94,7 @@
                     <ul class="mt-auto">
                         <li class="py-3 border-t border-gray-900">
                             <div class="language flex items-center gap-3 cursor-pointer" @click="openLanguage">
-                                <img src="./image/icon/language.svg" alt="">
+                                <img class="size-6 w-8" src="./image/icon/language.svg" alt="">
                                 <span class="text-gray-200">Language</span>
                             </div>
                         </li>
@@ -102,23 +102,51 @@
                 </div>
                 <div class="nav-menu-account w-full mt-auto relative z-[1]">
                     <ul class="flex flex-col gap-4">
-                        <li class="">
+                        <li class="member bg-grey p-3 rounded-lg">
                             <a href="#" class="flex items-center gap-3">
-                                <img class="size-6" src="./image/icon/my-account.svg" alt="">
-                                <span class="text-gray-200">Trang cá nhân</span>
+                                <div class="icon relative ">
+                                    <img class="w-10 h-10 rounded-full object-cover" src="./image/user/avarta.jpeg" alt="">
+                                    <span class="icon-label absolute -bottom-2 -left-2">
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M16.5357 4C16.8075 3.99997 17.0751 4.06688 17.3156 4.19494C17.556 4.323 17.7621 4.50836 17.9159 4.73501L17.9887 4.85356L20.7792 9.79201C20.9496 10.0934 21.0242 10.4406 20.9931 10.7864C20.962 11.1321 20.8265 11.4599 20.6051 11.7252L20.5097 11.8294L12.74 19.6901C12.5578 19.8744 12.3147 19.9842 12.0574 19.9984C11.8001 20.0126 11.5466 19.9303 11.3456 19.7671L11.2602 19.6909L3.49055 11.8294C3.24785 11.5839 3.08557 11.269 3.02569 10.9271C2.9658 10.5853 3.01121 10.2331 3.15576 9.91818L3.22105 9.79116L6.0107 4.85271C6.14552 4.61398 6.33578 4.41205 6.56501 4.26437C6.79425 4.11669 7.05558 4.0277 7.32643 4.00508L7.46286 4H16.5357ZM8.05962 9.32882C7.90271 9.48761 7.81457 9.70296 7.81457 9.92749C7.81457 10.152 7.90271 10.3674 8.05962 10.5262L11.2594 13.7634C11.3565 13.8617 11.4719 13.9397 11.5988 13.9929C11.7258 14.0462 11.8619 14.0735 11.9993 14.0735C12.1367 14.0735 12.2728 14.0462 12.3997 13.9929C12.5267 13.9397 12.642 13.8617 12.7392 13.7634L15.9389 10.5262C16.0189 10.4481 16.0826 10.3546 16.1265 10.2513C16.1704 10.148 16.1935 10.0369 16.1944 9.92444C16.1954 9.81201 16.1742 9.70051 16.1321 9.59644C16.0901 9.49237 16.0279 9.39783 15.9493 9.31832C15.8707 9.23881 15.7773 9.17594 15.6744 9.13336C15.5716 9.09078 15.4613 9.06936 15.3502 9.07033C15.2391 9.07131 15.1293 9.09467 15.0271 9.13905C14.925 9.18343 14.8327 9.24794 14.7555 9.32882L11.9993 12.1173L9.24311 9.32882C9.08615 9.17007 8.8733 9.08089 8.65137 9.08089C8.42943 9.08089 8.21658 9.17007 8.05962 9.32882Z"
+                                                fill="url(#paint0_linear_750_21508)" />
+                                            <path
+                                                d="M7.81445 9.9275C7.81445 9.70297 7.9026 9.48762 8.05951 9.32883C8.21647 9.17008 8.42932 9.0809 8.65125 9.0809C8.87319 9.0809 9.08604 9.17008 9.243 9.32883L11.9992 12.1173L14.7553 9.32883C14.8326 9.24795 14.9249 9.18344 15.027 9.13906C15.1291 9.09468 15.239 9.07132 15.3501 9.07034C15.4612 9.06937 15.5714 9.09079 15.6743 9.13337C15.7772 9.17595 15.8706 9.23882 15.9492 9.31833C16.0278 9.39784 16.0899 9.49238 16.132 9.59645C16.1741 9.70052 16.1953 9.81202 16.1943 9.92446C16.1934 10.0369 16.1703 10.148 16.1264 10.2513C16.0825 10.3546 16.0188 10.4481 15.9388 10.5262L12.7391 13.7634C12.6419 13.8618 12.5266 13.9397 12.3996 13.993C12.2727 14.0462 12.1366 14.0736 11.9992 14.0736C11.8618 14.0736 11.7257 14.0462 11.5987 13.993C11.4718 13.9397 11.3564 13.8618 11.2593 13.7634L8.05951 10.5262C7.9026 10.3674 7.81445 10.152 7.81445 9.9275Z"
+                                                fill="#D9D9D9" />
+                                            <defs>
+                                                <linearGradient id="paint0_linear_750_21508" x1="12" y1="4" x2="12" y2="20" gradientUnits="userSpaceOnUse">
+                                                    <stop stop-color="white" />
+                                                    <stop offset="1" stop-color="#C5C5C4" />
+                                                </linearGradient>
+                                            </defs>
+                                        </svg>
+                                    </span>
+                                </div>
+                                
+                                <div class="flex flex-col">
+                                    <span class="font-normal">Gói Thành viên</span>
+                                    <span class="text-lg font-semibold">Hạng Membership</span>
+                                </div>
                             </a>
                         </li>
                         <li class="">
                             <a href="#" class="flex items-center gap-3">
-                                <img class="size-6" src="./image/icon/bookmark.svg" alt="">
+                                <img class="size-6 w-8" src="./image/icon/bookmark-movie.svg" alt="">
                                 <span class="text-gray-200">Phim đã lưu</span>
                             </a>
                         </li>
                         <li class="">
                             <a href="#" class="flex items-center gap-3">
-                                <img class="size-6" src="./image/icon/bookmark.svg" alt="">
+                                <img class="size-6 w-8" src="./image/icon/bookmark-comic.svg" alt="">
                                 <span class="text-gray-200">Truyện đã lưu</span>
                             </a>
+                        </li>
+                        <li class="">
+                            <div class="language flex items-center gap-3 cursor-pointer" @click="openLanguage">
+                                <img class="size-6 w-8" src="./image/icon/language.svg" alt="">
+                                <span class="text-gray-200">Language</span>
+                            </div>
                         </li>
                         <li class="py-3 border-t border-gray-900">
                             <div class="flex items-center gap-3 cursor-pointer">
@@ -181,7 +209,7 @@
 <script>
     function menu() {
             return {
-                open: false,
+                open: true,
                 modalLanguage: false,
 
                 toggleMenu() {

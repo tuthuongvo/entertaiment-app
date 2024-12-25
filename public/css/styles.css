@@ -562,6 +562,12 @@ video {
 .\!-bottom-9 {
   bottom: -2.25rem !important;
 }
+.-bottom-2 {
+  bottom: -0.5rem;
+}
+.-left-2 {
+  left: -0.5rem;
+}
 .bottom-0 {
   bottom: 0px;
 }
@@ -745,6 +751,9 @@ video {
 }
 .w-56 {
   width: 14rem;
+}
+.w-8 {
+  width: 2rem;
 }
 .w-\[106px\] {
   width: 106px;
@@ -1099,6 +1108,10 @@ video {
 .text-base {
   font-size: 1rem;
   line-height: 1.5rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
 }
 .text-sm {
   font-size: 0.875rem;
@@ -1530,6 +1543,9 @@ input:focus-visible {
 }
 .logged .nav-menu-account {
   display: block;
+}
+.logged .nav-menu-content .language {
+  display: none;
 }
 .footer .navbar .nav-item.center {
   margin-top: -1rem;

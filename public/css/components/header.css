@@ -43,3 +43,6 @@
 .logged .nav-menu-account {
     display: block
 }
+.logged .nav-menu-content .language {
+    display: none
+}

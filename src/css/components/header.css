@@ -31,3 +31,6 @@
 .logged .nav-menu-account {
     @apply block;
 }
+.logged .nav-menu-content .language {
+    @apply hidden;
+}
