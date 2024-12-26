@@ -29,12 +29,12 @@
     display: none
 }
 .logged .nav-feature {
-    padding: 1.25rem;
-    background: radial-gradient(110.61% 110.61% at 50% -10.61%, #B1062E 0%, #1E1111 100%)
+    padding: 1.25rem
+    /* background: radial-gradient(110.61% 110.61% at 50% -10.61%, #B1062E 0%, #1E1111 100%); */
 }
 .logged .nav-menu {
-    padding: 0px;
-    background: linear-gradient(180deg, #050505 0%, #2D0C0C 100%)
+    padding: 0px
+    /* background: linear-gradient(180deg, #050505 0%, #2D0C0C 100%); */
 }
 .logged .nav-menu-content,
 .logged .nav-menu-account {

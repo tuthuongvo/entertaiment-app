@@ -45,5 +45,23 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require("tailwind-scrollbar")({ nocompatible: true }),
+    function ({ addUtilities }) {
+      addUtilities({
+        ".no-drag": {
+          "-webkit-user-drag": "none",
+          "user-drag": "none",
+          "user-select": "none",
+        },
+        ".no-scrollbar": {
+          "-ms-overflow-style": "none", // IE and Edge
+          "scrollbar-width": "none", // Firefox
+        },
+        ".no-scrollbar::-webkit-scrollbar": {
+          display: "none", // Safari and Chrome
+        },
+      });
+    },
+  ],
 };
