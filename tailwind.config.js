@@ -17,13 +17,16 @@ module.exports = {
         sans: ["Inter", "sans-serif"],
         bai: ["Bai Jamjuree", "sans-serif"],
       },
+      backgroundImage: {
+        mainComment: "linear-gradient(180deg, #77051F 0%, #432617 100%)",
+      },
       colors: {
-        mainBlack: "#010101", // Define your custom color with a name
+        mainBlack: "#010101",
         primary: "#D11030",
         grey: {
           DEFAULT: "#292929",
           light: "#B2B2B2",
-          "50": "#595959",
+          50: "#595959",
         },
         blue: {
           DEFAULT: "#6B87F9",
