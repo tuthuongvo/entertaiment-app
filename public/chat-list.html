@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat Component</title>
+    <link rel="stylesheet" href="./css/styles.css">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/alpinejs@2.8.2/dist/alpine.min.js" defer></script>
+</head>
+
+<body class="bg-mainBlack text-white">
+    <div class="container mx-auto">
+        <div class="nav flex items-center py-4 gap-3">
+            <div class="back">
+                <a href="#" class="flex items-center justify-center w-10 h-10 rounded-full bg-grey text-white">
+                    <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M0.225806 9L8.97581 17.75L10.2008 16.525L2.67581 9L10.2008 1.475L8.97581 0.25L0.225806 9Z"
+                            fill="white" />
+                    </svg>
+                </a>
+            </div>
+            <div class="title text-base font-medium">Đã thích bạn</div>
+        </div>
+        <form class="w-full mx-auto">
+            <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+            <div class="relative">
+                <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                    <svg class="w-4 h-4 text-grey-light dark:text-gray-400" aria-hidden="true" xmlns="http://www.w3.org/2000/svg"
+                        fill="none" viewBox="0 0 20 20">
+                        <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                            d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                    </svg>
+                </div>
+                <input type="search" id="default-search"
+                    class="block w-full py-4 pl-8 ps-10 text-sm placeholder:text-grey-light"
+                    placeholder="Tìm kiếm..." required />
+                <!-- <button type="submit"
+                    class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button> -->
+            </div>
+        </form>
+        <div class="chat-list mt-6">
+            <div class="chat-item relative flex items-start py-3">
+                <div class="avatar relative w-12 mr-4">
+                    <img src="./image/user/user-dating-2.png" alt="avatar" class="w-12 h-12 object-cover rounded-full">
+                    <span class="absolute -top-1 -right-1 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span>
+                </div>
+                <div class="content">
+                    <div class="name text-base">Athalia Putri</div>
+                    <div class="message text-sm text-grey-light">Good morning, did you sleep well?</div>
+                </div>
+                <div class="time absolute top-0 right-0 text-grey-50 text-xs">Today</div>
+                <div class="counter-mess absolute top-6  right-0 ">
+                    <span class="bg-red-500 text-white text-xs rounded-full px-2 py-1">2</span>
+                </div>
+            </div>
+            <div class="chat-item relative flex items-start py-3">
+                <div class="avatar relative w-12 mr-4 opacity-65">
+                    <img src="./image/user/user-dating-1.jpeg" alt="avatar" class="w-12 h-12 object-cover rounded-full">
+                    <!-- <span class="absolute -top-1 -right-1 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span> -->
+                </div>
+                <div class="content">
+                    <div class="name text-base text-grey-50">Theresa Webb</div>
+                    <div class="message text-sm text-grey-50">How is it going?</div>
+                </div>
+                <div class="time absolute top-0 right-0 text-grey-50 text-xs">17/6</div>
+                <!-- <div class="counter-mess absolute top-6 right-0">
+                    <span class="bg-red-500 text-white text-xs rounded-full px-2 py-1">2</span>
+                </div> -->
+            </div>
+            <div class="chat-item relative flex items-start py-3">
+                <div class="avatar relative w-12 mr-4 opacity-65">
+                    <img src="./image/user/user-dating-3.jpeg" alt="avatar" class="w-12 h-12 object-cover rounded-full">
+                    <!-- <span class="absolute -top-1 -right-1 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span> -->
+                </div>
+                <div class="content">
+                    <div class="name text-base text-grey-50">Raki Devon</div>
+                    <div class="message text-sm text-grey-50">Hey bro!</div>
+                </div>
+                <div class="time absolute top-0 right-0 text-grey-50 text-xs">17/6</div>
+                <!-- <div class="counter-mess absolute top-6 right-0">
+                    <span class="bg-red-500 text-white text-xs rounded-full px-2 py-1">2</span>
+                </div> -->
+            </div>
+            <div class="chat-item relative flex items-start py-3">
+                <div class="avatar relative w-12 mr-4 opacity-65">
+                    <img src="./image/user/user-dating-5.jpeg" alt="avatar" class="w-12 h-12 object-cover rounded-full">
+                    <!-- <span class="absolute -top-1 -right-1 w-3 h-3 bg-green-500 border-2 border-white rounded-full"></span> -->
+                </div>
+                <div class="content">
+                    <div class="name text-base text-grey-50">Theresa Webb</div>
+                    <div class="message text-sm text-grey-50">Harry Styles' Fruit Salad</div>
+                </div>
+                <div class="time absolute top-0 right-0 text-grey-50 text-xs">17/6</div>
+                <!-- <div class="counter-mess absolute top-6 right-0">
+                    <span class="bg-red-500 text-white text-xs rounded-full px-2 py-1">2</span>
+                </div> -->
+            </div>
+            
+        </div>
+    </div>
+
+</body>
+
+</html>
