@@ -1,0 +1,84 @@
+<div class="photo-banner relative rounded-xl overflow-hidden">
+    <div x-data="swiperBanner()" class="swiper-slider">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide relative">
+                    <div class="feature-img">
+                        <img class="object-cover w-full h-[557px]" src="./image/user/photo-1.jpeg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide relative">
+                    <div class="feature-img">
+                        <img class="object-cover w-full h-[557px]" src="./image/user/photo-2.jpeg" alt="">
+                    </div>
+                </div>
+                <div class="swiper-slide relative">
+                    <div class="feature-img">
+                        <img class="object-cover w-full h-[557px]" src="./image/user/photo-1.jpeg" alt="">
+                    </div>
+                </div>
+            </div>
+            <!-- <div class="swiper-pa gination"></div> -->
+        </div>
+    </div>
+    <div class="location absolute z-10 top-3 left-3">
+        <div class="flex items-center gap-1 rounded-lg bg-opacity-50 bg-black p-2">
+            <svg width="12" height="16" viewBox="0 0 12 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M6.00016 0.477844C9.12979 0.477844 11.6668 3.01489 11.6668 6.14451C11.6668 8.13489 10.7483 10.1476 9.21269 12.1116C8.66768 12.8086 8.07496 13.4585 7.46773 14.0505C7.41771 14.0992 7.36852 14.1467 7.32021 14.1929L7.04158 14.4543L6.78723 14.6835L6.56006 14.8797L6.42132 14.9946C6.17786 15.193 5.82894 15.1946 5.5837 14.9984L5.43864 14.8783L5.2125 14.683L4.95862 14.4542L4.68011 14.1929L4.53259 14.0505C3.92536 13.4585 3.33264 12.8086 2.78763 12.1116C1.25203 10.1476 0.333496 8.13489 0.333496 6.14451C0.333496 3.01489 2.87054 0.477844 6.00016 0.477844ZM6.00016 1.81118C3.60692 1.81118 1.66683 3.75127 1.66683 6.14451C1.66683 7.78194 2.46869 9.539 3.838 11.2903C4.34356 11.9369 4.89659 12.5433 5.46332 13.0957L5.7318 13.3526C5.82026 13.4356 5.90884 13.5187 6.00016 13.5985L6.26849 13.3526L6.53701 13.0957C7.10373 12.5433 7.65676 11.9369 8.16232 11.2903C9.53164 9.539 10.3335 7.78194 10.3335 6.14451C10.3335 3.75127 8.39341 1.81118 6.00016 1.81118ZM6.00016 3.47784C7.47292 3.47784 8.66683 4.67175 8.66683 6.14451C8.66683 7.61727 7.47292 8.81118 6.00016 8.81118C4.52741 8.81118 3.3335 7.61727 3.3335 6.14451C3.3335 4.67175 4.52741 3.47784 6.00016 3.47784ZM6.00016 4.81118C5.26379 4.81118 4.66683 5.40813 4.66683 6.14451C4.66683 6.88089 5.26379 7.47784 6.00016 7.47784C6.73654 7.47784 7.3335 6.88089 7.3335 6.14451C7.3335 5.40813 6.73654 4.81118 6.00016 4.81118Z"
+                    fill="white" />
+            </svg>
+            <span class="text-white text-xs">1 km</span>
+        </div>
+    </div>
+    <div class="info-user absolute z-10 bottom-0 left-0 right-0">
+        <div class="flex flex-col gap-1  bg-opacity-50 bg-black p-2">
+            <div class="name text-2xl font-semibold">
+                Jessica Parker, 23
+            </div>
+            <div class="desc text-base font-normal ">
+                Professional model
+            </div>
+        </div>
+        
+    </div>
+</div>
+<script>
+    function swiperBanner() {
+        return {
+            swiper: null,
+            autoplay: false,
+            initSwiper() {
+                this.swiper = new Swiper('.photo-banner .swiper', {
+                    direction: 'horizontal',
+                    loop: true,
+                    autoplay: this.autoplay ? {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    } : false,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                        dynamicBullets: true, // Add this line to enable dynamic bullets
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                });
+            },
+            toggleAutoplay() {
+                this.autoplay = !this.autoplay;
+                this.swiper.params.autoplay = this.autoplay ? {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                } : false;
+                this.swiper.update();
+            },
+            init() {
+                console.log('init');
+                this.initSwiper();
+            }
+        }
+    }
+</script>
