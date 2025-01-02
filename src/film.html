@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertaiment App</title>
+    <link rel="stylesheet" href="./css/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="./js/swiper/swiper-bundle.min.js"></script>
+</head>
+
+<body class="bg-mainBlack text-white">
+    <div class="page-wrapper">
+        <div class="container">
+            <!-- include:./components/header/header-game.html -->
+            <form class="w-full mx-auto">
+                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-grey-light dark:text-gray-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </div>
+                    <input type="search" id="default-search"
+                        class="block w-full py-4 pl-8 ps-10 text-sm placeholder:text-grey-light" placeholder="Tìm kiếm phim..."
+                        required />
+                    <!-- <button type="submit"
+                                class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button> -->
+                </div>
+            </form>
+            <div data-attr="scroll-container" class="nav-tabs !mt-4">
+                <ul>
+                    <li>
+                        <a href="#" class="active">Tất cả</a>
+                    </li>
+                    <li>
+                        <a href="#">Chương trình TV</a>
+                    </li>
+                    <li>
+                        <a href="#">Phim lẻ</a>
+                    </li>
+                    <li>
+                        <a href="#">Phim bộ</a>
+                    </li>
+                    <li>
+                        <a href="#">Phim chiếu rạp</a>
+                    </li>
+                </ul>
+            </div>
+            <!-- include:./components/sliders/herofilm-slider.html -->
+            <!-- include:./components/block/film-yeu-thich.html -->
+            <!-- include:./components/block/film-dang-hot.html -->
+            <!-- include:./components/block/film-nhieu-luot-xem.html -->
+
+
+        </div>
+    </div>
+   <script>
+    function touchScroll(el) {
+        return {
+            startX: 0,
+            scrollLeft: 0,
+            isScrolling: false,
+            init() {
+                el.addEventListener('mousedown', this.onMouseDown.bind(this));
+                document.addEventListener('mousemove', this.onMouseMove.bind(this));
+                document.addEventListener('mouseup', this.onMouseUp.bind(this));
+                const images = el.querySelectorAll('img');
+                images.forEach(img => {
+                    img.setAttribute('draggable', 'false');
+                });
+            },
+            onMouseDown(event) {
+                this.isScrolling = true;
+                this.startX = event.pageX - el.offsetLeft;
+                this.scrollLeft = el.scrollLeft;
+                // el.style.cursor = 'grabbing';
+            },
+            onMouseMove(event) {
+                if (!this.isScrolling) return;
+                const x = event.pageX - el.offsetLeft;
+                const walk = (x - this.startX) * 2; // Adjust scroll speed
+                el.scrollLeft = this.scrollLeft - walk;
+            },
+            onMouseUp(event) {
+                this.isScrolling = false;
+                // el.style.cursor = 'grab';
+            }
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const scrollContainers = document.querySelectorAll('[data-attr="scroll-container"]');
+        scrollContainers.forEach(container => {
+            const scrollInstance = touchScroll(container);
+            scrollInstance.init();
+        });
+    });
+</script>
+    
+</body>
+
+</html>

@@ -19,6 +19,7 @@ module.exports = {
       },
       backgroundImage: {
         mainComment: "linear-gradient(180deg, #77051F 0%, #432617 100%)",
+        herofilm: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #010101 100%)",
       },
       colors: {
         mainBlack: "#010101",

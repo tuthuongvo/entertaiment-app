@@ -1,0 +1,683 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Entertaiment App</title>
+    <link rel="stylesheet" href="./css/swiper/swiper-bundle.min.css">
+    <link rel="stylesheet" href="./css/styles.css">
+    <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="./js/swiper/swiper-bundle.min.js"></script>
+</head>
+
+<body class="bg-mainBlack text-white">
+    <div class="page-wrapper">
+        <div class="container">
+            <div class="nav flex items-center justify-between py-4 gap-3">
+    <div class="back flex items-center gap-2">
+        <a href="#" class="flex items-center justify-center w-10 h-10 rounded-full bg-grey text-white">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M3.5 23.3332C3.5 23.6426 3.62292 23.9393 3.84171 24.1581C4.0605 24.3769 4.35725 24.4998 4.66667 24.4998H23.3333C23.6428 24.4998 23.9395 24.3769 24.1583 24.1581C24.3771 23.9393 24.5 23.6426 24.5 23.3332V11.0715C24.5001 10.8937 24.4596 10.7182 24.3816 10.5585C24.3035 10.3988 24.19 10.259 24.0497 10.1498L14.7163 2.89083C14.5115 2.73152 14.2595 2.64502 14 2.64502C13.7405 2.64502 13.4885 2.73152 13.2837 2.89083L3.95033 10.1498C3.81001 10.259 3.69648 10.3988 3.61843 10.5585C3.54039 10.7182 3.49988 10.8937 3.5 11.0715V23.3332ZM5.83333 22.1665V11.6408L14 5.2895L22.1667 11.6408V22.1665H5.83333ZM19.8333 17.4998H8.16667V19.8332H19.8333V17.4998Z"
+                    fill="white" />
+            </svg>
+        </a>
+        <span class="title">
+            Phim hay
+        </span>
+    </div>
+    <div class="search">
+        <div class="icon">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd"
+                    d="M12.6667 22C17.8213 22 22 17.8213 22 12.6667C22 7.51203 17.8213 3.33335 12.6667 3.33335C7.51201 3.33335 3.33334 7.51203 3.33334 12.6667C3.33334 17.8213 7.51201 22 12.6667 22ZM12.6667 24.6667C15.485 24.6667 18.0765 23.6951 20.1243 22.0685C20.8854 21.4641 21.5713 20.7691 22.1659 20C23.7338 17.9721 24.6667 15.4283 24.6667 12.6667C24.6667 6.03927 19.2941 0.666687 12.6667 0.666687C6.03925 0.666687 0.666672 6.03927 0.666672 12.6667C0.666672 19.2941 6.03925 24.6667 12.6667 24.6667Z"
+                    fill="#EDEDED" />
+                <path
+                    d="M27.1013 25.5654C27.2301 25.4366 27.2317 25.2285 27.105 25.0977L22.1659 20C21.5713 20.7691 20.8854 21.4641 20.1243 22.0685L25.0976 27.0951C25.2276 27.2265 25.4396 27.2271 25.5703 27.0964L27.1013 25.5654Z"
+                    fill="#EDEDED" />
+            </svg>
+    
+        </div>
+    </div>
+</div>
+            <form class="w-full mx-auto">
+                <label for="default-search" class="mb-2 text-sm font-medium text-gray-900 sr-only dark:text-white">Search</label>
+                <div class="relative">
+                    <div class="absolute inset-y-0 start-0 flex items-center ps-3 pointer-events-none">
+                        <svg class="w-4 h-4 text-grey-light dark:text-gray-400" aria-hidden="true"
+                            xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 20 20">
+                            <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                                d="m19 19-4-4m0-7A7 7 0 1 1 1 8a7 7 0 0 1 14 0Z" />
+                        </svg>
+                    </div>
+                    <input type="search" id="default-search"
+                        class="block w-full py-4 pl-8 ps-10 text-sm placeholder:text-grey-light" placeholder="Tìm kiếm phim..."
+                        required />
+                    <!-- <button type="submit"
+                                class="text-white absolute end-2.5 bottom-2.5 bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Search</button> -->
+                </div>
+            </form>
+            <div data-attr="scroll-container" class="nav-tabs !mt-4">
+                <ul>
+                    <li>
+                        <a href="#" class="active">Tất cả</a>
+                    </li>
+                    <li>
+                        <a href="#">Chương trình TV</a>
+                    </li>
+                    <li>
+                        <a href="#">Phim lẻ</a>
+                    </li>
+                    <li>
+                        <a href="#">Phim bộ</a>
+                    </li>
+                    <li>
+                        <a href="#">Phim chiếu rạp</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="head-title flex items-center justify-between mb-4">
+    <div class="title font-medium text-base leading-6 text-gray-200">Phim đang hot 🔥</div>
+</div>
+<div class="hero-banner border border-grey rounded-2xl overflow-hidden">
+    <div x-data="swiperBanner()" class="swiper-slider">
+        <div class="swiper">
+            <div class="swiper-wrapper">
+                <div class="swiper-slide relative">
+                    <div class="feature-img">
+                        <img class="object-cover w-full h-[240px]" src="./image/film/hero-1.png" alt="">
+                    </div>
+                    <div class="title bg-herofilm absolute w-full px-2 py-10 bottom-0 left-0 right-0 flex items-center justify-between">
+                        <div>
+                            <p class="font-normal text-lg leading-10 tracking-tighter">
+                                Kimetsu no Yaiba Anime (2018)
+                            </p>
+                            <div class="chapters flex gap-2 font-normal text-xs leading-5 text-[#EDEDED]">
+                                <div class="like flex gap-1 items-center">
+                                    <svg class="size-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <g opacity="0.89">
+                                            <path
+                                                d="M3.0821 4.60585C3.02908 4.2415 3.28147 3.90315 3.64583 3.85014L8.92358 3.08221C9.28794 3.0292 9.62628 3.28159 9.67929 3.64594L9.79991 4.47492H11.1473L10.9027 2.79424C10.7967 2.06553 10.12 1.56075 9.39132 1.66678L2.79412 2.62669C2.06542 2.73272 1.56064 3.40941 1.66667 4.13811L2.62658 10.7353C2.72322 11.3995 3.29394 11.8777 3.94602 11.8768V10.5916C3.94602 10.5595 3.9437 10.5274 3.93907 10.4956L3.0821 4.60585Z"
+                                                fill="#6B87F9" />
+                                            <path
+                                                d="M8.14729 11.7441V7.58958C8.14729 7.48171 8.26871 7.41849 8.35708 7.48035L11.3246 9.5576C11.4004 9.61068 11.4004 9.72298 11.3246 9.77606L8.35708 11.8533C8.26871 11.9152 8.14729 11.8519 8.14729 11.7441Z"
+                                                fill="#6B87F9" />
+                                            <path fill-rule="evenodd" clip-rule="evenodd"
+                                                d="M12.814 5.00016H6.14729C5.41091 5.00016 4.81395 5.59712 4.81395 6.3335V13.0002C4.81395 13.7365 5.41091 14.3335 6.14729 14.3335H12.814C13.5503 14.3335 14.1473 13.7365 14.1473 13.0002V6.3335C14.1473 5.59712 13.5503 5.00016 12.814 5.00016ZM12.1473 6.3335L6.81395 6.3335C6.44576 6.3335 6.14729 6.63197 6.14729 7.00016V12.3335C6.14729 12.7017 6.44576 13.0002 6.81395 13.0002H12.1473C12.5155 13.0002 12.814 12.7017 12.814 12.3335V7.00016C12.814 6.63197 12.5155 6.3335 12.1473 6.3335Z"
+                                                fill="#6B87F9" />
+                                            <path
+                                                d="M10.408 2.86623L10.5693 3.97492H10.2324L10.1741 3.57395C10.0813 2.93633 9.48921 2.49465 8.85159 2.58742L3.57383 3.35535C2.93621 3.44813 2.49453 4.04023 2.58731 4.67784L3.44428 10.5676L3.93907 10.4956L3.44428 10.5676C3.44544 10.5755 3.44602 10.5835 3.44602 10.5916V11.21C3.27599 11.0824 3.15437 10.8901 3.12137 10.6633L2.16146 4.06612C2.09519 3.61068 2.41068 3.18775 2.86612 3.12148L9.46331 2.16157C9.91876 2.0953 10.3417 2.41079 10.408 2.86623ZM8.64729 11.0398V8.29382L10.6087 9.66683L8.64729 11.0398ZM6.14729 5.50016H12.814C13.2742 5.50016 13.6473 5.87326 13.6473 6.3335V13.0002C13.6473 13.4604 13.2742 13.8335 12.814 13.8335H6.14729C5.68705 13.8335 5.31395 13.4604 5.31395 13.0002V6.3335C5.31395 5.87326 5.68705 5.50016 6.14729 5.50016ZM12.1473 5.8335L6.81395 5.8335C6.16962 5.8335 5.64729 6.35583 5.64729 7.00016V12.3335C5.64729 12.9778 6.16962 13.5002 6.81395 13.5002H12.1473C12.7916 13.5002 13.314 12.9778 13.314 12.3335V7.00016C13.314 6.35583 12.7916 5.8335 12.1473 5.8335Z"
+                                                stroke="#6B87F9" />
+                                        </g>
+                                    </svg>
+                                    <span>15/24 tập</span>
+                                </div>
+                                <div class="counter flex gap-1 items-center">
+                                    <svg class="size-4" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path
+                                            d="M7.74587 1.15155C8.99992 2 8.99992 2.94065 8.99992 4.8851V5.7781L12.3422 5.77806C12.4685 5.77806 12.5862 5.81126 12.6675 5.8394C12.7596 5.87129 12.8558 5.9149 12.9507 5.96715C13.1389 6.07069 13.3509 6.22408 13.5337 6.42902C13.717 6.63448 13.8875 6.91099 13.9513 7.2553C14.0083 7.56278 13.9729 7.88589 13.8359 8.20828C14.0263 8.41951 14.2283 8.71312 14.3202 9.09066C14.4323 9.55128 14.3615 10.0568 14.0549 10.5757C14.2462 11.2427 13.9896 12.0645 13.2714 12.6161C13.325 12.9316 13.3832 13.3779 13.3032 13.7766C13.2504 14.0394 13.1293 14.3317 12.8695 14.5532C12.6134 14.7715 12.2902 14.8634 11.9396 14.8668C11.1474 14.9192 9.92526 14.9816 8.80745 14.9999C8.24509 15.0091 7.70202 15.0073 7.25046 14.9867C6.82727 14.9673 6.40411 14.9295 6.1358 14.8344C5.91758 14.757 5.71546 14.6571 5.53705 14.5689L5.47824 14.5398C5.27817 14.4414 5.0841 14.3493 4.84988 14.2696C4.39133 14.1136 3.72801 13.9881 2.58862 14.057C1.93283 14.0967 1.33325 13.5726 1.33325 12.8568V8.9178C1.33325 8.24097 3.13403 7.76171 3.66659 7.66658C5.47824 7.66658 5.66659 6.66658 5.74535 4.43827V1.99508C5.74535 1.46187 6.0831 0.980132 6.63468 0.843075C7.07174 0.734471 7.37286 0.899183 7.74587 1.15155Z"
+                                            fill="#F4C26C" />
+                                    </svg>
+
+                                    <span>13.1k lượt thích</span>
+                                </div>
+                            </div>
+                        </div>
+                        <a href="#"
+                            class="w-9 h-9 rounded-full bg-primary flex justify-center items-center font-medium text-sm leading-5 text-gray-200">
+                            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path
+                                    d="M22.2089 13.6335C22.7599 14.0429 22.7441 14.8729 22.178 15.261L8.56546 24.5936C7.90185 25.0485 7 24.5734 7 23.7688L7 4.32229C7 3.50031 7.9366 3.02937 8.59639 3.51959L22.2089 13.6335Z"
+                                    fill="white" />
+                            </svg>
+                        </a>
+                    </div>
+                    
+                </div>
+                <div class="swiper-slide relative">
+                    <div class="feature-img">
+                        <img class="object-cover w-full h-[240px]" src="./image/hero-banner.png" alt="">
+                    </div>
+                    <div class="title absolute w-full px-2 top-16 left-1/2 transform -translate-x-1/2">
+                        <p class="font-normal text-2xl leading-10 text-center tracking-tighter">App Hẹn Hò, Xem Phim,
+                            Đọc Truyện, Chơi Game
+                            <br>
+                            <span class="text-3xl font-semibold mt-9 block">All In One</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide relative">
+                    <div class="feature-img">
+                        <img class="object-cover w-full h-[240px]" src="./image/hero-banner.png" alt="">
+                    </div>
+                    <div class="title absolute w-full px-2 top-16 left-1/2 transform -translate-x-1/2">
+                        <p class="font-normal text-2xl leading-10 text-center tracking-tighter">App Hẹn Hò, Xem Phim,
+                            Đọc Truyện, Chơi Game
+                            <br>
+                            <span class="text-3xl font-semibold mt-9 block">All In One</span>
+                        </p>
+                    </div>
+                </div>
+                <div class="swiper-slide relative">
+                    <div class="feature-img">
+                        <img class="object-cover w-full h-[240px]" src="./image/hero-banner.png" alt="">
+                    </div>
+                    <div class="title absolute w-full px-2 top-16 left-1/2 transform -translate-x-1/2">
+                        <p class="font-normal text-2xl leading-10 text-center tracking-tighter">App Hẹn Hò, Xem Phim,
+                            Đọc Truyện, Chơi Game
+                            <br>
+                            <span class="text-3xl font-semibold mt-9 block">All In One</span>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-pagination"></div>
+        </div>
+    </div>
+</div>
+<script>
+    function swiperBanner() {
+        return {
+            swiper: null,
+            autoplay: false,
+            initSwiper() {
+                this.swiper = new Swiper('.hero-banner .swiper', {
+                    direction: 'horizontal',
+                    loop: true,
+                    autoplay: this.autoplay ? {
+                        delay: 3000,
+                        disableOnInteraction: false,
+                    } : false,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                        dynamicBullets: true, // Add this line to enable dynamic bullets
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                });
+            },
+            toggleAutoplay() {
+                this.autoplay = !this.autoplay;
+                this.swiper.params.autoplay = this.autoplay ? {
+                    delay: 3000,
+                    disableOnInteraction: false,
+                } : false;
+                this.swiper.update();
+            },
+            init() {
+                this.initSwiper();
+            }
+        }
+    }
+</script>
+            <div class="addition p-5 mt-5">
+    <div class="head-title flex items-center justify-between mb-4">
+        <div class="title font-medium text-base leading-6 text-gray-200">Thể loại được yêu thích</div>
+    </div>
+    <div class="addition-content pb-14 overflow-hidden">
+        <div x-data="swiperAddition()" class="swiper-slider w-[224px]">
+            <div class="swiper !overflow-visible">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide">
+                        <div
+                            class="flex flex-col justify-between p-4 w-56 h-[268px] rounded-[12px] border border-gray-900">
+                            <div class="grid grid-cols-2 gap-2 ">
+                                <div class="item">
+                                    <div class="feature-img">
+                                        <img src="./image/film/grid-film-1.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="feature-img">
+                                        <img src="./image/film/grid-film-2.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="feature-img">
+                                        <img src="./image/film/grid-film-3.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="feature-img">
+                                        <img src="./image/film/grid-film-4.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="action w-full">
+                                <a href="#"
+                                    class="flex justify-between items-center font-medium text-sm leading-5 text-gray-200">
+                                    Hành động
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.5 12L9 19.5L7.95 18.45L14.4 12L7.95 5.55L9 4.5L16.5 12Z"
+                                            fill="#EDEDED" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="flex flex-col justify-between p-4 h-[268px] rounded-[12px] border border-gray-900">
+                            <div class="grid grid-cols-2 gap-2 ">
+                                <div class="item">
+                                    <div class="feature-img">
+                                        <img src="./image/film/grid-film-1.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="feature-img">
+                                        <img src="./image/film/grid-film-2.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="feature-img">
+                                        <img src="./image/film/grid-film-3.png" alt="">
+                                    </div>
+                                </div>
+                                <div class="item">
+                                    <div class="feature-img">
+                                        <img src="./image/film/grid-film-4.png" alt="">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="action w-full">
+                                <a href="#"
+                                    class="flex justify-between items-center font-medium text-sm leading-5 text-gray-200">
+                                    Hành động
+                                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none"
+                                        xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M16.5 12L9 19.5L7.95 18.45L14.4 12L7.95 5.55L9 4.5L16.5 12Z"
+                                            fill="#EDEDED" />
+                                    </svg>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="swiper-pagination !-bottom-9"></div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<script>
+    function swiperAddition() {
+        return {
+            swiper: null,
+            autoplay: false,
+            initSwiperAddition() {
+                this.swiper = new Swiper('.addition-content .swiper', {
+                    direction: 'horizontal',
+                    loop: true,
+                    spaceBetween: 20,
+                    pagination: {
+                        el: '.swiper-pagination',
+                        clickable: true,
+                        dynamicBullets: true,
+                    },
+                    navigation: {
+                        nextEl: '.swiper-button-next',
+                        prevEl: '.swiper-button-prev',
+                    },
+                });
+            },
+            init() {
+                this.initSwiperAddition();
+            }
+        }
+    }
+</script>
+            <div class="addition p-5 mt-5">
+    <div class="head-title flex items-center justify-between mb-4">
+        <div class="title font-medium text-base leading-6 text-gray-200">Phim đang hot 🔥</div>
+        <a href="#" class="btn-link">
+            Xem toàn bộ
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 13L7 7L1 1" stroke="#EDEDED" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+        </a>
+    </div>
+    <div class="addition-content">
+        <div data-attr="scroll-container" class="card scroll-container book">
+            <div class="item mr-2">
+                <div class="feature-img relative rounded overflow-hidden">
+                    <img class="w-full h-[172px] rounded object-cover" src="./image/book/book-3.png" alt="">
+                    <div class="label absolute top-0 right-0">
+                        <img src="./image/label/label-top-new-1.svg" alt="">
+                    </div>
+                    <div class="label-chapter">
+                        <span>Tập mới</span>
+                    </div>
+                </div>
+                <div class="title font-semibold text-sm leading-5 text-gray-200 my-4 whitespace-normal">
+                    Berserk
+                </div>
+                <div class="ratings flex gap-2 font-normal text-[10px] leading-5 text-[#B2B2B2]">
+                    <div class="like flex gap-1 items-center">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.74596 1.15167C9.00001 2.00012 9.00001 2.94078 9.00001 4.88523V5.77822L12.3423 5.77818C12.4686 5.77818 12.5863 5.81138 12.6676 5.83953C12.7597 5.87142 12.8559 5.91503 12.9508 5.96727C13.139 6.07081 13.351 6.2242 13.5338 6.42914C13.7171 6.6346 13.8876 6.91111 13.9514 7.25542C14.0084 7.5629 13.973 7.88602 13.836 8.2084C14.0264 8.41963 14.2284 8.71324 14.3203 9.09078C14.4324 9.5514 14.3616 10.0569 14.055 10.5758C14.2463 11.2428 13.9897 12.0646 13.2715 12.6162C13.3251 12.9317 13.3833 13.378 13.3032 13.7767C13.2505 14.0396 13.1294 14.3318 12.8696 14.5533C12.6135 14.7716 12.2903 14.8636 11.9397 14.8669C11.1475 14.9193 9.92536 14.9817 8.80754 15C8.24518 15.0093 7.70211 15.0075 7.25055 14.9868C6.82736 14.9674 6.4042 14.9296 6.13589 14.8345C5.91768 14.7571 5.71555 14.6572 5.53715 14.569L5.47833 14.54C5.27826 14.4415 5.08419 14.3494 4.84997 14.2697C4.39142 14.1137 3.7281 13.9882 2.58871 14.0571C1.93292 14.0968 1.33334 13.5728 1.33334 12.8569V8.91792C1.33334 8.24109 3.13412 7.76183 3.66668 7.6667C5.47833 7.6667 5.66668 6.6667 5.74544 4.4384V1.9952C5.74544 1.46199 6.0832 0.980254 6.63477 0.843197C7.07184 0.734593 7.37295 0.899306 7.74596 1.15167Z"
+                                fill="#F4C26C" />
+                        </svg>
+
+                        19.4k
+                    </div>
+                    <div class="counter flex gap-1 items-center">
+                        <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.232 3.84452L2.35491 3.56174C2.57077 3.0614 2.96633 2.66013 3.46354 2.43713L3.84324 2.26826C3.8891 2.24704 3.92793 2.21313 3.95515 2.17055C3.98237 2.12797 3.99683 2.07849 3.99683 2.02795C3.99683 1.97741 3.98237 1.92793 3.95515 1.88535C3.92793 1.84276 3.8891 1.80886 3.84324 1.78764L3.48452 1.62776C2.97481 1.39841 2.57248 0.982307 2.3604 0.465175L2.234 0.160415C2.21544 0.113129 2.18306 0.0725326 2.14108 0.0439186C2.09911 0.0153046 2.04949 0 1.99869 0C1.94789 0 1.89826 0.0153046 1.85629 0.0439186C1.81432 0.0725326 1.78193 0.113129 1.76337 0.160415L1.63697 0.465675C1.42466 0.98271 1.02215 1.39863 0.512353 1.62776L0.154135 1.78714C0.10813 1.8083 0.0691574 1.84221 0.0418386 1.88485C0.0145198 1.92748 0 1.97706 0 2.0277C0 2.07834 0.0145198 2.12791 0.0418386 2.17055C0.0691574 2.21319 0.10813 2.2471 0.154135 2.26826L0.533336 2.43763C1.03064 2.66041 1.42638 3.0615 1.64247 3.56174L1.76537 3.84452C1.78458 3.89057 1.81698 3.9299 1.8585 3.95757C1.90002 3.98524 1.94879 4 1.99869 4C2.04858 4 2.09735 3.98524 2.13887 3.95757C2.18039 3.9299 2.21279 3.89057 2.232 3.84452Z"
+                                fill="white" />
+                        </svg>
+
+                        214k lượt chơi
+                    </div>
+                </div>
+            </div>
+            <div class="item mr-2">
+                <div class="feature-img relative rounded overflow-hidden">
+                    <img class="w-full h-[172px] rounded object-cover" src="./image/book/book-4.png" alt="">
+                    <div class="label absolute top-0 right-0">
+                        <img src="./image/label/label-top-new-2.svg" alt="">
+                    </div>
+                    <div class="label-chapter">
+                        <span>Tập mới</span>
+                    </div>
+                </div>
+                <div class="title font-semibold text-sm leading-5 text-gray-200 my-4 whitespace-normal">
+                    Onepiece
+                </div>
+                <div class="ratings flex gap-2 font-normal text-[10px] leading-5 text-[#B2B2B2]">
+                    <div class="like flex gap-1 items-center">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.74596 1.15167C9.00001 2.00012 9.00001 2.94078 9.00001 4.88523V5.77822L12.3423 5.77818C12.4686 5.77818 12.5863 5.81138 12.6676 5.83953C12.7597 5.87142 12.8559 5.91503 12.9508 5.96727C13.139 6.07081 13.351 6.2242 13.5338 6.42914C13.7171 6.6346 13.8876 6.91111 13.9514 7.25542C14.0084 7.5629 13.973 7.88602 13.836 8.2084C14.0264 8.41963 14.2284 8.71324 14.3203 9.09078C14.4324 9.5514 14.3616 10.0569 14.055 10.5758C14.2463 11.2428 13.9897 12.0646 13.2715 12.6162C13.3251 12.9317 13.3833 13.378 13.3032 13.7767C13.2505 14.0396 13.1294 14.3318 12.8696 14.5533C12.6135 14.7716 12.2903 14.8636 11.9397 14.8669C11.1475 14.9193 9.92536 14.9817 8.80754 15C8.24518 15.0093 7.70211 15.0075 7.25055 14.9868C6.82736 14.9674 6.4042 14.9296 6.13589 14.8345C5.91768 14.7571 5.71555 14.6572 5.53715 14.569L5.47833 14.54C5.27826 14.4415 5.08419 14.3494 4.84997 14.2697C4.39142 14.1137 3.7281 13.9882 2.58871 14.0571C1.93292 14.0968 1.33334 13.5728 1.33334 12.8569V8.91792C1.33334 8.24109 3.13412 7.76183 3.66668 7.6667C5.47833 7.6667 5.66668 6.6667 5.74544 4.4384V1.9952C5.74544 1.46199 6.0832 0.980254 6.63477 0.843197C7.07184 0.734593 7.37295 0.899306 7.74596 1.15167Z"
+                                fill="#F4C26C" />
+                        </svg>
+
+                        19.4k
+                    </div>
+                    <div class="counter flex gap-1 items-center">
+                        <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.232 3.84452L2.35491 3.56174C2.57077 3.0614 2.96633 2.66013 3.46354 2.43713L3.84324 2.26826C3.8891 2.24704 3.92793 2.21313 3.95515 2.17055C3.98237 2.12797 3.99683 2.07849 3.99683 2.02795C3.99683 1.97741 3.98237 1.92793 3.95515 1.88535C3.92793 1.84276 3.8891 1.80886 3.84324 1.78764L3.48452 1.62776C2.97481 1.39841 2.57248 0.982307 2.3604 0.465175L2.234 0.160415C2.21544 0.113129 2.18306 0.0725326 2.14108 0.0439186C2.09911 0.0153046 2.04949 0 1.99869 0C1.94789 0 1.89826 0.0153046 1.85629 0.0439186C1.81432 0.0725326 1.78193 0.113129 1.76337 0.160415L1.63697 0.465675C1.42466 0.98271 1.02215 1.39863 0.512353 1.62776L0.154135 1.78714C0.10813 1.8083 0.0691574 1.84221 0.0418386 1.88485C0.0145198 1.92748 0 1.97706 0 2.0277C0 2.07834 0.0145198 2.12791 0.0418386 2.17055C0.0691574 2.21319 0.10813 2.2471 0.154135 2.26826L0.533336 2.43763C1.03064 2.66041 1.42638 3.0615 1.64247 3.56174L1.76537 3.84452C1.78458 3.89057 1.81698 3.9299 1.8585 3.95757C1.90002 3.98524 1.94879 4 1.99869 4C2.04858 4 2.09735 3.98524 2.13887 3.95757C2.18039 3.9299 2.21279 3.89057 2.232 3.84452Z"
+                                fill="white" />
+                        </svg>
+
+                        214k lượt chơi
+                    </div>
+                </div>
+            </div>
+            <div class="item mr-2">
+                <div class="feature-img relative rounded overflow-hidden">
+                    <img class="w-full h-[172px] rounded object-cover" src="./image/book/book-5.png" alt="">
+                    <div class="label absolute top-0 right-0">
+                        <img src="./image/label/label-top-new-3.svg" alt="" draggable="false">
+                    </div>
+                    <div class="label-chapter">
+                        <span>Tập mới</span>
+                    </div>
+                </div>
+                <div class="title font-semibold text-sm leading-5 text-gray-200 my-4 whitespace-normal">
+                    Thanh Gươm Diệt Quỷ
+                </div>
+                <div class="ratings flex gap-2 font-normal text-[10px] leading-5 text-[#B2B2B2]">
+                    <div class="like flex gap-1 items-center">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.74596 1.15167C9.00001 2.00012 9.00001 2.94078 9.00001 4.88523V5.77822L12.3423 5.77818C12.4686 5.77818 12.5863 5.81138 12.6676 5.83953C12.7597 5.87142 12.8559 5.91503 12.9508 5.96727C13.139 6.07081 13.351 6.2242 13.5338 6.42914C13.7171 6.6346 13.8876 6.91111 13.9514 7.25542C14.0084 7.5629 13.973 7.88602 13.836 8.2084C14.0264 8.41963 14.2284 8.71324 14.3203 9.09078C14.4324 9.5514 14.3616 10.0569 14.055 10.5758C14.2463 11.2428 13.9897 12.0646 13.2715 12.6162C13.3251 12.9317 13.3833 13.378 13.3032 13.7767C13.2505 14.0396 13.1294 14.3318 12.8696 14.5533C12.6135 14.7716 12.2903 14.8636 11.9397 14.8669C11.1475 14.9193 9.92536 14.9817 8.80754 15C8.24518 15.0093 7.70211 15.0075 7.25055 14.9868C6.82736 14.9674 6.4042 14.9296 6.13589 14.8345C5.91768 14.7571 5.71555 14.6572 5.53715 14.569L5.47833 14.54C5.27826 14.4415 5.08419 14.3494 4.84997 14.2697C4.39142 14.1137 3.7281 13.9882 2.58871 14.0571C1.93292 14.0968 1.33334 13.5728 1.33334 12.8569V8.91792C1.33334 8.24109 3.13412 7.76183 3.66668 7.6667C5.47833 7.6667 5.66668 6.6667 5.74544 4.4384V1.9952C5.74544 1.46199 6.0832 0.980254 6.63477 0.843197C7.07184 0.734593 7.37295 0.899306 7.74596 1.15167Z"
+                                fill="#F4C26C" />
+                        </svg>
+
+                        19.4k
+                    </div>
+                    <div class="counter flex gap-1 items-center">
+                        <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.232 3.84452L2.35491 3.56174C2.57077 3.0614 2.96633 2.66013 3.46354 2.43713L3.84324 2.26826C3.8891 2.24704 3.92793 2.21313 3.95515 2.17055C3.98237 2.12797 3.99683 2.07849 3.99683 2.02795C3.99683 1.97741 3.98237 1.92793 3.95515 1.88535C3.92793 1.84276 3.8891 1.80886 3.84324 1.78764L3.48452 1.62776C2.97481 1.39841 2.57248 0.982307 2.3604 0.465175L2.234 0.160415C2.21544 0.113129 2.18306 0.0725326 2.14108 0.0439186C2.09911 0.0153046 2.04949 0 1.99869 0C1.94789 0 1.89826 0.0153046 1.85629 0.0439186C1.81432 0.0725326 1.78193 0.113129 1.76337 0.160415L1.63697 0.465675C1.42466 0.98271 1.02215 1.39863 0.512353 1.62776L0.154135 1.78714C0.10813 1.8083 0.0691574 1.84221 0.0418386 1.88485C0.0145198 1.92748 0 1.97706 0 2.0277C0 2.07834 0.0145198 2.12791 0.0418386 2.17055C0.0691574 2.21319 0.10813 2.2471 0.154135 2.26826L0.533336 2.43763C1.03064 2.66041 1.42638 3.0615 1.64247 3.56174L1.76537 3.84452C1.78458 3.89057 1.81698 3.9299 1.8585 3.95757C1.90002 3.98524 1.94879 4 1.99869 4C2.04858 4 2.09735 3.98524 2.13887 3.95757C2.18039 3.9299 2.21279 3.89057 2.232 3.84452Z"
+                                fill="white" />
+                        </svg>
+
+                        214k lượt chơi
+                    </div>
+                </div>
+            </div>
+            <div class="item mr-2">
+                <div class="feature-img relative rounded overflow-hidden">
+                    <img class="w-full h-[172px] rounded object-cover" src="./image/book/book-6.png" alt="">
+                    <div class="label-chapter">
+                        <span>Tập mới</span>
+                    </div>
+                </div>
+                <div class="title font-semibold text-sm leading-5 text-gray-200 my-4 whitespace-normal">
+                    Berserk II
+                </div>
+                <div class="ratings flex gap-2 font-normal text-[10px] leading-5 text-[#B2B2B2]">
+                    <div class="like flex gap-1 items-center">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.74596 1.15167C9.00001 2.00012 9.00001 2.94078 9.00001 4.88523V5.77822L12.3423 5.77818C12.4686 5.77818 12.5863 5.81138 12.6676 5.83953C12.7597 5.87142 12.8559 5.91503 12.9508 5.96727C13.139 6.07081 13.351 6.2242 13.5338 6.42914C13.7171 6.6346 13.8876 6.91111 13.9514 7.25542C14.0084 7.5629 13.973 7.88602 13.836 8.2084C14.0264 8.41963 14.2284 8.71324 14.3203 9.09078C14.4324 9.5514 14.3616 10.0569 14.055 10.5758C14.2463 11.2428 13.9897 12.0646 13.2715 12.6162C13.3251 12.9317 13.3833 13.378 13.3032 13.7767C13.2505 14.0396 13.1294 14.3318 12.8696 14.5533C12.6135 14.7716 12.2903 14.8636 11.9397 14.8669C11.1475 14.9193 9.92536 14.9817 8.80754 15C8.24518 15.0093 7.70211 15.0075 7.25055 14.9868C6.82736 14.9674 6.4042 14.9296 6.13589 14.8345C5.91768 14.7571 5.71555 14.6572 5.53715 14.569L5.47833 14.54C5.27826 14.4415 5.08419 14.3494 4.84997 14.2697C4.39142 14.1137 3.7281 13.9882 2.58871 14.0571C1.93292 14.0968 1.33334 13.5728 1.33334 12.8569V8.91792C1.33334 8.24109 3.13412 7.76183 3.66668 7.6667C5.47833 7.6667 5.66668 6.6667 5.74544 4.4384V1.9952C5.74544 1.46199 6.0832 0.980254 6.63477 0.843197C7.07184 0.734593 7.37295 0.899306 7.74596 1.15167Z"
+                                fill="#F4C26C" />
+                        </svg>
+
+                        19.4k
+                    </div>
+                    <div class="counter flex gap-1 items-center">
+                        <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.232 3.84452L2.35491 3.56174C2.57077 3.0614 2.96633 2.66013 3.46354 2.43713L3.84324 2.26826C3.8891 2.24704 3.92793 2.21313 3.95515 2.17055C3.98237 2.12797 3.99683 2.07849 3.99683 2.02795C3.99683 1.97741 3.98237 1.92793 3.95515 1.88535C3.92793 1.84276 3.8891 1.80886 3.84324 1.78764L3.48452 1.62776C2.97481 1.39841 2.57248 0.982307 2.3604 0.465175L2.234 0.160415C2.21544 0.113129 2.18306 0.0725326 2.14108 0.0439186C2.09911 0.0153046 2.04949 0 1.99869 0C1.94789 0 1.89826 0.0153046 1.85629 0.0439186C1.81432 0.0725326 1.78193 0.113129 1.76337 0.160415L1.63697 0.465675C1.42466 0.98271 1.02215 1.39863 0.512353 1.62776L0.154135 1.78714C0.10813 1.8083 0.0691574 1.84221 0.0418386 1.88485C0.0145198 1.92748 0 1.97706 0 2.0277C0 2.07834 0.0145198 2.12791 0.0418386 2.17055C0.0691574 2.21319 0.10813 2.2471 0.154135 2.26826L0.533336 2.43763C1.03064 2.66041 1.42638 3.0615 1.64247 3.56174L1.76537 3.84452C1.78458 3.89057 1.81698 3.9299 1.8585 3.95757C1.90002 3.98524 1.94879 4 1.99869 4C2.04858 4 2.09735 3.98524 2.13887 3.95757C2.18039 3.9299 2.21279 3.89057 2.232 3.84452Z"
+                                fill="white" />
+                        </svg>
+
+                        214k lượt chơi
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+            <div class="addition p-5 mt-5">
+    <div class="head-title flex items-center justify-between mb-4">
+        <div class="title font-medium text-base leading-6 text-gray-200">Nhiều lượt xem nhất</div>
+        <a href="#" class="btn-link">
+            Xem toàn bộ
+            <svg width="8" height="14" viewBox="0 0 8 14" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M1 13L7 7L1 1" stroke="#EDEDED" stroke-linecap="round" stroke-linejoin="round" />
+            </svg>
+
+        </a>
+    </div>
+    <div class="addition-content">
+        <div data-attr="scroll-container" class="card scroll-container book">
+            <div class="item mr-2">
+                <div class="feature-img relative rounded overflow-hidden">
+                    <img class="w-full h-[172px] rounded object-cover" src="./image/book/book-3.png" alt="">
+                    <div class="label absolute top-0 right-0">
+                        <img src="./image/label/label-top-new-1.svg" alt="">
+                    </div>
+                    <div class="label-chapter">
+                        <span>Tập mới</span>
+                    </div>
+                </div>
+                <div class="title font-semibold text-sm leading-5 text-gray-200 my-4 whitespace-normal">
+                    Berserk
+                </div>
+                <div class="ratings flex gap-2 font-normal text-[10px] leading-5 text-[#B2B2B2]">
+                    <div class="like flex gap-1 items-center">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.74596 1.15167C9.00001 2.00012 9.00001 2.94078 9.00001 4.88523V5.77822L12.3423 5.77818C12.4686 5.77818 12.5863 5.81138 12.6676 5.83953C12.7597 5.87142 12.8559 5.91503 12.9508 5.96727C13.139 6.07081 13.351 6.2242 13.5338 6.42914C13.7171 6.6346 13.8876 6.91111 13.9514 7.25542C14.0084 7.5629 13.973 7.88602 13.836 8.2084C14.0264 8.41963 14.2284 8.71324 14.3203 9.09078C14.4324 9.5514 14.3616 10.0569 14.055 10.5758C14.2463 11.2428 13.9897 12.0646 13.2715 12.6162C13.3251 12.9317 13.3833 13.378 13.3032 13.7767C13.2505 14.0396 13.1294 14.3318 12.8696 14.5533C12.6135 14.7716 12.2903 14.8636 11.9397 14.8669C11.1475 14.9193 9.92536 14.9817 8.80754 15C8.24518 15.0093 7.70211 15.0075 7.25055 14.9868C6.82736 14.9674 6.4042 14.9296 6.13589 14.8345C5.91768 14.7571 5.71555 14.6572 5.53715 14.569L5.47833 14.54C5.27826 14.4415 5.08419 14.3494 4.84997 14.2697C4.39142 14.1137 3.7281 13.9882 2.58871 14.0571C1.93292 14.0968 1.33334 13.5728 1.33334 12.8569V8.91792C1.33334 8.24109 3.13412 7.76183 3.66668 7.6667C5.47833 7.6667 5.66668 6.6667 5.74544 4.4384V1.9952C5.74544 1.46199 6.0832 0.980254 6.63477 0.843197C7.07184 0.734593 7.37295 0.899306 7.74596 1.15167Z"
+                                fill="#F4C26C" />
+                        </svg>
+
+                        19.4k
+                    </div>
+                    <div class="counter flex gap-1 items-center">
+                        <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.232 3.84452L2.35491 3.56174C2.57077 3.0614 2.96633 2.66013 3.46354 2.43713L3.84324 2.26826C3.8891 2.24704 3.92793 2.21313 3.95515 2.17055C3.98237 2.12797 3.99683 2.07849 3.99683 2.02795C3.99683 1.97741 3.98237 1.92793 3.95515 1.88535C3.92793 1.84276 3.8891 1.80886 3.84324 1.78764L3.48452 1.62776C2.97481 1.39841 2.57248 0.982307 2.3604 0.465175L2.234 0.160415C2.21544 0.113129 2.18306 0.0725326 2.14108 0.0439186C2.09911 0.0153046 2.04949 0 1.99869 0C1.94789 0 1.89826 0.0153046 1.85629 0.0439186C1.81432 0.0725326 1.78193 0.113129 1.76337 0.160415L1.63697 0.465675C1.42466 0.98271 1.02215 1.39863 0.512353 1.62776L0.154135 1.78714C0.10813 1.8083 0.0691574 1.84221 0.0418386 1.88485C0.0145198 1.92748 0 1.97706 0 2.0277C0 2.07834 0.0145198 2.12791 0.0418386 2.17055C0.0691574 2.21319 0.10813 2.2471 0.154135 2.26826L0.533336 2.43763C1.03064 2.66041 1.42638 3.0615 1.64247 3.56174L1.76537 3.84452C1.78458 3.89057 1.81698 3.9299 1.8585 3.95757C1.90002 3.98524 1.94879 4 1.99869 4C2.04858 4 2.09735 3.98524 2.13887 3.95757C2.18039 3.9299 2.21279 3.89057 2.232 3.84452Z"
+                                fill="white" />
+                        </svg>
+
+                        214k lượt chơi
+                    </div>
+                </div>
+            </div>
+            <div class="item mr-2">
+                <div class="feature-img relative rounded overflow-hidden">
+                    <img class="w-full h-[172px] rounded object-cover" src="./image/book/book-4.png" alt="">
+                    <div class="label absolute top-0 right-0">
+                        <img src="./image/label/label-top-new-2.svg" alt="">
+                    </div>
+                    <div class="label-chapter">
+                        <span>Tập mới</span>
+                    </div>
+                </div>
+                <div class="title font-semibold text-sm leading-5 text-gray-200 my-4 whitespace-normal">
+                    Onepiece
+                </div>
+                <div class="ratings flex gap-2 font-normal text-[10px] leading-5 text-[#B2B2B2]">
+                    <div class="like flex gap-1 items-center">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.74596 1.15167C9.00001 2.00012 9.00001 2.94078 9.00001 4.88523V5.77822L12.3423 5.77818C12.4686 5.77818 12.5863 5.81138 12.6676 5.83953C12.7597 5.87142 12.8559 5.91503 12.9508 5.96727C13.139 6.07081 13.351 6.2242 13.5338 6.42914C13.7171 6.6346 13.8876 6.91111 13.9514 7.25542C14.0084 7.5629 13.973 7.88602 13.836 8.2084C14.0264 8.41963 14.2284 8.71324 14.3203 9.09078C14.4324 9.5514 14.3616 10.0569 14.055 10.5758C14.2463 11.2428 13.9897 12.0646 13.2715 12.6162C13.3251 12.9317 13.3833 13.378 13.3032 13.7767C13.2505 14.0396 13.1294 14.3318 12.8696 14.5533C12.6135 14.7716 12.2903 14.8636 11.9397 14.8669C11.1475 14.9193 9.92536 14.9817 8.80754 15C8.24518 15.0093 7.70211 15.0075 7.25055 14.9868C6.82736 14.9674 6.4042 14.9296 6.13589 14.8345C5.91768 14.7571 5.71555 14.6572 5.53715 14.569L5.47833 14.54C5.27826 14.4415 5.08419 14.3494 4.84997 14.2697C4.39142 14.1137 3.7281 13.9882 2.58871 14.0571C1.93292 14.0968 1.33334 13.5728 1.33334 12.8569V8.91792C1.33334 8.24109 3.13412 7.76183 3.66668 7.6667C5.47833 7.6667 5.66668 6.6667 5.74544 4.4384V1.9952C5.74544 1.46199 6.0832 0.980254 6.63477 0.843197C7.07184 0.734593 7.37295 0.899306 7.74596 1.15167Z"
+                                fill="#F4C26C" />
+                        </svg>
+
+                        19.4k
+                    </div>
+                    <div class="counter flex gap-1 items-center">
+                        <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.232 3.84452L2.35491 3.56174C2.57077 3.0614 2.96633 2.66013 3.46354 2.43713L3.84324 2.26826C3.8891 2.24704 3.92793 2.21313 3.95515 2.17055C3.98237 2.12797 3.99683 2.07849 3.99683 2.02795C3.99683 1.97741 3.98237 1.92793 3.95515 1.88535C3.92793 1.84276 3.8891 1.80886 3.84324 1.78764L3.48452 1.62776C2.97481 1.39841 2.57248 0.982307 2.3604 0.465175L2.234 0.160415C2.21544 0.113129 2.18306 0.0725326 2.14108 0.0439186C2.09911 0.0153046 2.04949 0 1.99869 0C1.94789 0 1.89826 0.0153046 1.85629 0.0439186C1.81432 0.0725326 1.78193 0.113129 1.76337 0.160415L1.63697 0.465675C1.42466 0.98271 1.02215 1.39863 0.512353 1.62776L0.154135 1.78714C0.10813 1.8083 0.0691574 1.84221 0.0418386 1.88485C0.0145198 1.92748 0 1.97706 0 2.0277C0 2.07834 0.0145198 2.12791 0.0418386 2.17055C0.0691574 2.21319 0.10813 2.2471 0.154135 2.26826L0.533336 2.43763C1.03064 2.66041 1.42638 3.0615 1.64247 3.56174L1.76537 3.84452C1.78458 3.89057 1.81698 3.9299 1.8585 3.95757C1.90002 3.98524 1.94879 4 1.99869 4C2.04858 4 2.09735 3.98524 2.13887 3.95757C2.18039 3.9299 2.21279 3.89057 2.232 3.84452Z"
+                                fill="white" />
+                        </svg>
+
+                        214k lượt chơi
+                    </div>
+                </div>
+            </div>
+            <div class="item mr-2">
+                <div class="feature-img relative rounded overflow-hidden">
+                    <img class="w-full h-[172px] rounded object-cover" src="./image/book/book-5.png" alt="">
+                    <div class="label absolute top-0 right-0">
+                        <img src="./image/label/label-top-new-3.svg" alt="" draggable="false">
+                    </div>
+                    <div class="label-chapter">
+                        <span>Tập mới</span>
+                    </div>
+                </div>
+                <div class="title font-semibold text-sm leading-5 text-gray-200 my-4 whitespace-normal">
+                    Thanh Gươm Diệt Quỷ
+                </div>
+                <div class="ratings flex gap-2 font-normal text-[10px] leading-5 text-[#B2B2B2]">
+                    <div class="like flex gap-1 items-center">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.74596 1.15167C9.00001 2.00012 9.00001 2.94078 9.00001 4.88523V5.77822L12.3423 5.77818C12.4686 5.77818 12.5863 5.81138 12.6676 5.83953C12.7597 5.87142 12.8559 5.91503 12.9508 5.96727C13.139 6.07081 13.351 6.2242 13.5338 6.42914C13.7171 6.6346 13.8876 6.91111 13.9514 7.25542C14.0084 7.5629 13.973 7.88602 13.836 8.2084C14.0264 8.41963 14.2284 8.71324 14.3203 9.09078C14.4324 9.5514 14.3616 10.0569 14.055 10.5758C14.2463 11.2428 13.9897 12.0646 13.2715 12.6162C13.3251 12.9317 13.3833 13.378 13.3032 13.7767C13.2505 14.0396 13.1294 14.3318 12.8696 14.5533C12.6135 14.7716 12.2903 14.8636 11.9397 14.8669C11.1475 14.9193 9.92536 14.9817 8.80754 15C8.24518 15.0093 7.70211 15.0075 7.25055 14.9868C6.82736 14.9674 6.4042 14.9296 6.13589 14.8345C5.91768 14.7571 5.71555 14.6572 5.53715 14.569L5.47833 14.54C5.27826 14.4415 5.08419 14.3494 4.84997 14.2697C4.39142 14.1137 3.7281 13.9882 2.58871 14.0571C1.93292 14.0968 1.33334 13.5728 1.33334 12.8569V8.91792C1.33334 8.24109 3.13412 7.76183 3.66668 7.6667C5.47833 7.6667 5.66668 6.6667 5.74544 4.4384V1.9952C5.74544 1.46199 6.0832 0.980254 6.63477 0.843197C7.07184 0.734593 7.37295 0.899306 7.74596 1.15167Z"
+                                fill="#F4C26C" />
+                        </svg>
+
+                        19.4k
+                    </div>
+                    <div class="counter flex gap-1 items-center">
+                        <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.232 3.84452L2.35491 3.56174C2.57077 3.0614 2.96633 2.66013 3.46354 2.43713L3.84324 2.26826C3.8891 2.24704 3.92793 2.21313 3.95515 2.17055C3.98237 2.12797 3.99683 2.07849 3.99683 2.02795C3.99683 1.97741 3.98237 1.92793 3.95515 1.88535C3.92793 1.84276 3.8891 1.80886 3.84324 1.78764L3.48452 1.62776C2.97481 1.39841 2.57248 0.982307 2.3604 0.465175L2.234 0.160415C2.21544 0.113129 2.18306 0.0725326 2.14108 0.0439186C2.09911 0.0153046 2.04949 0 1.99869 0C1.94789 0 1.89826 0.0153046 1.85629 0.0439186C1.81432 0.0725326 1.78193 0.113129 1.76337 0.160415L1.63697 0.465675C1.42466 0.98271 1.02215 1.39863 0.512353 1.62776L0.154135 1.78714C0.10813 1.8083 0.0691574 1.84221 0.0418386 1.88485C0.0145198 1.92748 0 1.97706 0 2.0277C0 2.07834 0.0145198 2.12791 0.0418386 2.17055C0.0691574 2.21319 0.10813 2.2471 0.154135 2.26826L0.533336 2.43763C1.03064 2.66041 1.42638 3.0615 1.64247 3.56174L1.76537 3.84452C1.78458 3.89057 1.81698 3.9299 1.8585 3.95757C1.90002 3.98524 1.94879 4 1.99869 4C2.04858 4 2.09735 3.98524 2.13887 3.95757C2.18039 3.9299 2.21279 3.89057 2.232 3.84452Z"
+                                fill="white" />
+                        </svg>
+
+                        214k lượt chơi
+                    </div>
+                </div>
+            </div>
+            <div class="item mr-2">
+                <div class="feature-img relative rounded overflow-hidden">
+                    <img class="w-full h-[172px] rounded object-cover" src="./image/book/book-6.png" alt="">
+                    <div class="label-chapter">
+                        <span>Tập mới</span>
+                    </div>
+                </div>
+                <div class="title font-semibold text-sm leading-5 text-gray-200 my-4 whitespace-normal">
+                    Berserk II
+                </div>
+                <div class="ratings flex gap-2 font-normal text-[10px] leading-5 text-[#B2B2B2]">
+                    <div class="like flex gap-1 items-center">
+                        <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M7.74596 1.15167C9.00001 2.00012 9.00001 2.94078 9.00001 4.88523V5.77822L12.3423 5.77818C12.4686 5.77818 12.5863 5.81138 12.6676 5.83953C12.7597 5.87142 12.8559 5.91503 12.9508 5.96727C13.139 6.07081 13.351 6.2242 13.5338 6.42914C13.7171 6.6346 13.8876 6.91111 13.9514 7.25542C14.0084 7.5629 13.973 7.88602 13.836 8.2084C14.0264 8.41963 14.2284 8.71324 14.3203 9.09078C14.4324 9.5514 14.3616 10.0569 14.055 10.5758C14.2463 11.2428 13.9897 12.0646 13.2715 12.6162C13.3251 12.9317 13.3833 13.378 13.3032 13.7767C13.2505 14.0396 13.1294 14.3318 12.8696 14.5533C12.6135 14.7716 12.2903 14.8636 11.9397 14.8669C11.1475 14.9193 9.92536 14.9817 8.80754 15C8.24518 15.0093 7.70211 15.0075 7.25055 14.9868C6.82736 14.9674 6.4042 14.9296 6.13589 14.8345C5.91768 14.7571 5.71555 14.6572 5.53715 14.569L5.47833 14.54C5.27826 14.4415 5.08419 14.3494 4.84997 14.2697C4.39142 14.1137 3.7281 13.9882 2.58871 14.0571C1.93292 14.0968 1.33334 13.5728 1.33334 12.8569V8.91792C1.33334 8.24109 3.13412 7.76183 3.66668 7.6667C5.47833 7.6667 5.66668 6.6667 5.74544 4.4384V1.9952C5.74544 1.46199 6.0832 0.980254 6.63477 0.843197C7.07184 0.734593 7.37295 0.899306 7.74596 1.15167Z"
+                                fill="#F4C26C" />
+                        </svg>
+
+                        19.4k
+                    </div>
+                    <div class="counter flex gap-1 items-center">
+                        <svg width="4" height="4" viewBox="0 0 4 4" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path
+                                d="M2.232 3.84452L2.35491 3.56174C2.57077 3.0614 2.96633 2.66013 3.46354 2.43713L3.84324 2.26826C3.8891 2.24704 3.92793 2.21313 3.95515 2.17055C3.98237 2.12797 3.99683 2.07849 3.99683 2.02795C3.99683 1.97741 3.98237 1.92793 3.95515 1.88535C3.92793 1.84276 3.8891 1.80886 3.84324 1.78764L3.48452 1.62776C2.97481 1.39841 2.57248 0.982307 2.3604 0.465175L2.234 0.160415C2.21544 0.113129 2.18306 0.0725326 2.14108 0.0439186C2.09911 0.0153046 2.04949 0 1.99869 0C1.94789 0 1.89826 0.0153046 1.85629 0.0439186C1.81432 0.0725326 1.78193 0.113129 1.76337 0.160415L1.63697 0.465675C1.42466 0.98271 1.02215 1.39863 0.512353 1.62776L0.154135 1.78714C0.10813 1.8083 0.0691574 1.84221 0.0418386 1.88485C0.0145198 1.92748 0 1.97706 0 2.0277C0 2.07834 0.0145198 2.12791 0.0418386 2.17055C0.0691574 2.21319 0.10813 2.2471 0.154135 2.26826L0.533336 2.43763C1.03064 2.66041 1.42638 3.0615 1.64247 3.56174L1.76537 3.84452C1.78458 3.89057 1.81698 3.9299 1.8585 3.95757C1.90002 3.98524 1.94879 4 1.99869 4C2.04858 4 2.09735 3.98524 2.13887 3.95757C2.18039 3.9299 2.21279 3.89057 2.232 3.84452Z"
+                                fill="white" />
+                        </svg>
+
+                        214k lượt chơi
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+        </div>
+    </div>
+   <script>
+    function touchScroll(el) {
+        return {
+            startX: 0,
+            scrollLeft: 0,
+            isScrolling: false,
+            init() {
+                el.addEventListener('mousedown', this.onMouseDown.bind(this));
+                document.addEventListener('mousemove', this.onMouseMove.bind(this));
+                document.addEventListener('mouseup', this.onMouseUp.bind(this));
+                const images = el.querySelectorAll('img');
+                images.forEach(img => {
+                    img.setAttribute('draggable', 'false');
+                });
+            },
+            onMouseDown(event) {
+                this.isScrolling = true;
+                this.startX = event.pageX - el.offsetLeft;
+                this.scrollLeft = el.scrollLeft;
+                // el.style.cursor = 'grabbing';
+            },
+            onMouseMove(event) {
+                if (!this.isScrolling) return;
+                const x = event.pageX - el.offsetLeft;
+                const walk = (x - this.startX) * 2; // Adjust scroll speed
+                el.scrollLeft = this.scrollLeft - walk;
+            },
+            onMouseUp(event) {
+                this.isScrolling = false;
+                // el.style.cursor = 'grab';
+            }
+        }
+    }
+
+    document.addEventListener('DOMContentLoaded', () => {
+        const scrollContainers = document.querySelectorAll('[data-attr="scroll-container"]');
+        scrollContainers.forEach(container => {
+            const scrollInstance = touchScroll(container);
+            scrollInstance.init();
+        });
+    });
+</script>
+    
+</body>
+
+</html>
