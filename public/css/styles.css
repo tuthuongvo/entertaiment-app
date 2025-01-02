@@ -508,6 +508,8 @@ video {
   width: 100%;
   margin-right: auto;
   margin-left: auto;
+  padding-right: 16px;
+  padding-left: 16px;
 }
 @media (min-width: 420px) {
 
@@ -638,6 +640,9 @@ video {
 .top-16 {
   top: 4rem;
 }
+.top-2 {
+  top: 0.5rem;
+}
 .top-3 {
   top: 0.75rem;
 }
@@ -728,6 +733,9 @@ video {
 .inline-block {
   display: inline-block;
 }
+.\!flex {
+  display: flex !important;
+}
 .flex {
   display: flex;
 }
@@ -806,6 +814,9 @@ video {
 .h-\[557px\] {
   height: 557px;
 }
+.h-\[600px\] {
+  height: 600px;
+}
 .h-\[76px\] {
   height: 76px;
 }
@@ -821,8 +832,14 @@ video {
 .max-h-full {
   max-height: 100%;
 }
+.min-h-10 {
+  min-height: 2.5rem;
+}
 .min-h-16 {
   min-height: 4rem;
+}
+.min-h-80 {
+  min-height: 20rem;
 }
 .\!w-auto {
   width: auto !important;
@@ -945,6 +962,9 @@ video {
 }
 .flex-col {
   flex-direction: column;
+}
+.flex-wrap {
+  flex-wrap: wrap;
 }
 .items-start {
   align-items: flex-start;
@@ -1131,6 +1151,9 @@ video {
 .bg-herofilm {
   background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #010101 100%);
 }
+.bg-herofilmdetail {
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #010101 60%);
+}
 .bg-mainComment {
   background-image: linear-gradient(180deg, #77051F 0%, #432617 100%);
 }
@@ -1155,6 +1178,10 @@ video {
 }
 .p-6 {
   padding: 1.5rem;
+}
+.\!px-0 {
+  padding-left: 0px !important;
+  padding-right: 0px !important;
 }
 .\!px-4 {
   padding-left: 1rem !important;
@@ -1334,6 +1361,10 @@ video {
 .text-grey-50 {
   --tw-text-opacity: 1;
   color: rgb(89 89 89 / var(--tw-text-opacity, 1));
+}
+.text-grey-80 {
+  --tw-text-opacity: 1;
+  color: rgb(237 237 237 / var(--tw-text-opacity, 1));
 }
 .text-grey-light {
   --tw-text-opacity: 1;
@@ -1779,6 +1810,19 @@ textarea {
     background-repeat: no-repeat;
     background-size: cover;
 }
+.main-info {
+  position: absolute;
+  bottom: 0px;
+  left: 0px;
+  right: 0px;
+  z-index: 10;
+  display: flex;
+  min-height: 20rem;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: center;
+  background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #010101 60%);
+}
 .placeholder\:text-grey-light::-moz-placeholder {
   --tw-text-opacity: 1;
   color: rgb(178 178 178 / var(--tw-text-opacity, 1));
@@ -1813,6 +1857,16 @@ textarea {
 }
 .focus-visible\:outline-0:focus-visible {
   outline-width: 0px;
+}
+@media (min-width: 960px) {
+
+  .md\:h-\[350px\] {
+    height: 350px;
+  }
+
+  .md\:grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
 }
 @media (prefers-color-scheme: dark) {
 

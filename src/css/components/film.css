@@ -1,0 +1,3 @@
+.main-info {
+    @apply flex flex-wrap items-end justify-center absolute z-10 bottom-0 left-0 right-0 min-h-80 bg-herofilmdetail ;
+}

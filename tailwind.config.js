@@ -20,6 +20,8 @@ module.exports = {
       backgroundImage: {
         mainComment: "linear-gradient(180deg, #77051F 0%, #432617 100%)",
         herofilm: "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #010101 100%)",
+        herofilmdetail:
+          "linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #010101 60%)",
       },
       colors: {
         mainBlack: "#010101",
@@ -28,6 +30,7 @@ module.exports = {
           DEFAULT: "#292929",
           light: "#B2B2B2",
           50: "#595959",
+          80: "#EDEDED",
         },
         blue: {
           DEFAULT: "#6B87F9",
@@ -38,7 +41,7 @@ module.exports = {
       },
       container: {
         center: true, // Centers the container by default
-        // padding: "2rem", // Adds padding to the container
+        padding: "16px", // Adds padding to the container
         screens: {
           sm: "420px", // Mobile Small
           md: "768px", // Tablet
