@@ -11,3 +11,21 @@
     justify-content: center;
     background-image: linear-gradient(180deg, rgba(0, 0, 0, 0) 0%, #010101 60%)
 }
+.chapter-list .listing ul li a {
+    display: block;
+    border-radius: 0.5rem;
+    --tw-bg-opacity: 1;
+    background-color: rgb(41 41 41 / var(--tw-bg-opacity, 1));
+    padding: 0.25rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    font-weight: 400;
+    --tw-text-opacity: 1;
+    color: rgb(178 178 178 / var(--tw-text-opacity, 1))
+}
+.chapter-list .listing ul li a.active {
+    --tw-bg-opacity: 1;
+    background-color: rgb(209 16 48 / var(--tw-bg-opacity, 1));
+    --tw-text-opacity: 1;
+    color: rgb(255 255 255 / var(--tw-text-opacity, 1))
+}

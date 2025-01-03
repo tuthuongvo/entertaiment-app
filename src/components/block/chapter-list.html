@@ -1,0 +1,117 @@
+<div class="chapter-list mt-20 mb-12">
+    <div class="container">
+        <div class="title text mb-2">
+            <h2 class="text-xs text-grey-light">Danh sách tập</h2>
+        </div>
+        <div x-data="{ expanded: false }" class="listing">
+            <ul :class="expanded ? 'h-auto' : 'h-20'" class="flex flex-wrap gap-2 overflow-hidden">
+                <li>
+                    <a href="#" class="active">
+                        <span>Tập 1</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 2</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 3</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 4</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 5</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 6</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 7</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 8</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 9</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 10</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 11</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 12</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 13</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 14</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 15</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 16</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 17</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 18</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 19</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="#">
+                        <span>Tập 20</span>
+                    </a>
+                </li>
+            </ul>
+            <div class="action text-center mt-4">
+                <span @click="expanded = !expanded" class="readmore text-blue text-sm font-semibold cursor-pointer">
+                    <span x-show="!expanded">Xem thêm</span>
+                    <span x-show="expanded">Thu gọn</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>

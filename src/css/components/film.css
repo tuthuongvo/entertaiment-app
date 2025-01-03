@@ -1,3 +1,9 @@
 .main-info {
     @apply flex flex-wrap items-end justify-center absolute z-10 bottom-0 left-0 right-0 min-h-80 bg-herofilmdetail ;
 }
+.chapter-list .listing ul li a{
+    @apply block bg-grey p-1 rounded-lg text-grey-light text-base font-normal;
+}
+.chapter-list .listing ul li a.active {
+    @apply bg-primary text-white;
+}

@@ -1,0 +1,45 @@
+<div class="mt-8 border-t border-b border-grey py-4">
+    <div class="container">
+        <div class="flex flex-wrap items">
+            <div class="item w-1/3">
+                <div class="title text-xs text-grey-light mb-1">Ngày ra mắt</div>
+                <div class="content text-sm text-grey-80 min-h-16">8 tháng 9, 2024</div>
+            </div>
+            <div class="item w-2/3">
+                <div class="title text-xs text-grey-light mb-1">Tags</div>
+                <div class="content text-sm text-grey-80 min-h-16">hành động, giả tưởng</div>
+            </div>
+            <div class="item w-1/3">
+                <div class="title text-xs text-grey-light mb-1">Đạo diễn</div>
+                <div class="content text-sm text-grey-80 min-h-16">Daisy Ridley</div>
+            </div>
+            <div class="item w-2/3">
+                <div class="title text-xs text-grey-light mb-1">Diễn viên</div>
+                <div class="content text-sm text-grey-80 min-h-16">David copperfield, Megan Fox</div>
+            </div>
+        </div>
+        <div x-data="{ expanded: false }" class="desctiption">
+            <div class="title text-base text-grey-80 font-semibold mb-2">Nội dung</div>
+            <div class="content text-sm text-grey-80">
+                <p x-show="expanded">
+                    Rey (Daisy Ridley) finally manages to find the legendary Jedi knight, Luke Skywalker (Mark Hamill) on an
+                    island with a
+                    magical aura. The heroes of The Force Awakens join the galactic legends in an adventure that unlocks age-old
+                    mysteries of the Force and shocking revelations of the past.
+                    
+                </p>
+                <p x-show="!expanded">
+                    Rey (Daisy Ridley) finally manages to find the legendary Jedi knight, Luke Skywalker (Mark Hamill) on an
+                    island with a
+                    magical aura. The heroes of The Force Awakens...
+                </p>
+            </div>
+            <div class="action text-center mt-4">
+                <span @click="expanded = !expanded" class="readmore text-blue text-sm font-semibold cursor-pointer">
+                    <span x-show="!expanded">Xem thêm</span>
+                    <span x-show="expanded">Thu gọn</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
