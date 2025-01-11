@@ -1,0 +1,273 @@
+<div  x-data="sheetComponent()" class="top-nav container relative mt-3 flex justify-between">
+    <div class="back">
+        <a href="#" class="flex items-center justify-center w-10 h-10 rounded-full bg-grey text-white">
+            <svg width="11" height="18" viewBox="0 0 11 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path d="M0.225806 9L8.97581 17.75L10.2008 16.525L2.67581 9L10.2008 1.475L8.97581 0.25L0.225806 9Z"
+                    fill="white" />
+            </svg>
+        </a>
+    </div>
+    <div class="setting">
+        <button @click="openSheet" class="flex items-center justify-center w-10 h-10 rounded-full bg-grey text-white">
+            <svg width="28" height="28" viewBox="0 0 28 28" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path
+                    d="M13.9999 8.75C14.9664 8.75 15.7499 7.9665 15.7499 7C15.7499 6.0335 14.9664 5.25 13.9999 5.25C13.0334 5.25 12.2499 6.0335 12.2499 7C12.2499 7.9665 13.0334 8.75 13.9999 8.75Z"
+                    fill="white" />
+                <path
+                    d="M13.9999 15.75C14.9664 15.75 15.7499 14.9665 15.7499 14C15.7499 13.0335 14.9664 12.25 13.9999 12.25C13.0334 12.25 12.2499 13.0335 12.2499 14C12.2499 14.9665 13.0334 15.75 13.9999 15.75Z"
+                    fill="white" />
+                <path
+                    d="M13.9999 22.75C14.9664 22.75 15.7499 21.9665 15.7499 21C15.7499 20.0335 14.9664 19.25 13.9999 19.25C13.0334 19.25 12.2499 20.0335 12.2499 21C12.2499 21.9665 13.0334 22.75 13.9999 22.75Z"
+                    fill="white" />
+            </svg>
+        </button>
+    </div>
+    <!-- Overlay -->
+    <div x-show="isOpen" @click="closeSheet" x-transition:enter="transition ease-out duration-300"
+        x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100"
+        x-transition:leave="transition ease-in duration-300" x-transition:leave-start="opacity-100"
+        x-transition:leave-end="opacity-0" class="fixed inset-0 backdrop-blur-20 z-40"></div>
+    
+    <!-- Drawer Sheet -->
+    <div x-show="isOpen" x-bind:style="`transform: translateY(${translateY}px);`"
+        @mousedown="startDrag($event)" @mousemove.window="drag($event)" @mouseup.window="endDrag"
+        @touchstart="startDrag($event)" @touchmove.window="drag($event)" @touchend.window="endDrag"
+        x-transition:enter="transition ease-out duration-300 transform" x-transition:enter-start="translate-y-full"
+        x-transition:enter-end="translate-y-0" x-transition:leave="transition ease-in duration-300 transform"
+        x-transition:leave-start="translate-y-0" x-transition:leave-end="translate-y-full"
+        class="fixed bottom-0 left-0 w-full bg-mainBlack shadow-lg z-50 p-6 rounded-t-2xl" style="touch-action: none; user-select: none;">
+        <div class="h-1 w-10 bg-white rounded mx-auto mb-4"></div>
+        <div class="drawer-content">
+            <div class="head flex items-center justify-between">
+                <h2 class="text-lg font-bold text-white">Bộ lọc</h2>
+                <button class="mt-2 text-sm text-primary">Làm lại</button>
+            </div>
+            <div class="body mt-4">
+                <div class="form-group">
+                    <div class="fieldshet">
+                        <div class="field">
+                            <div class="label mb-3">
+                                <span>Kiểu chữ</span>
+                            </div>
+                            <div class="control flex">
+                                <div class="w-1/3 p-[2px]">
+                                    <input id="radio1" type="radio" name="radio" class="hidden peer" />
+                                    <label for="radio1" class="w-full p-2 rounded-s-2xl bg-grey text-center text-base text-grey-80 font-semibold flex items-center justify-center cursor-pointer  peer-checked:bg-primary">
+                                        <span>
+                                            Kiểu 1
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="w-1/3 p-[2px]">
+                                    <input id="radio2" type="radio" name="radio" class="hidden peer" checked />
+                                    <label for="radio2" class="w-full p-2 bg-grey text-center text-base text-grey-80 font-semibold flex items-center justify-center cursor-pointer  peer-checked:bg-primary">
+                                        <span >
+                                            Kiểu 2
+                                        </span>
+                                    </label>
+                                </div>
+                                <div class="w-1/3 p-[2px]">
+                                    <input id="radio3" type="radio" name="radio" class="hidden peer" />
+                                    <label for="radio3" class="w-full p-2 rounded-e-2xl bg-grey text-center text-base text-grey-80 font-semibold flex items-center justify-center cursor-pointer peer-checked:bg-primary">
+                                        <span>
+                                            Kiểu 3
+                                        </span>
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div x-data="{ fontSize: 16 }" class="fieldshet">
+                        <div class="field">
+                            <div class="label mb-3 flex items-center justify-between">
+                                <span>Kích thước chữ</span>
+                                <span class="select-font text-sm text-grey-80" x-text="fontSize"></span>
+                            </div>
+                            <div class="control flex">
+                                <div class="length range__slider" data-min="4" data-max="32">
+                                    <input id="slider" type="range" min="4" max="32" x-model="fontSize" class="w-full" />
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="fieldshet">
+                        <div class="field">
+                            <div x-data="{ isOpen: false, selectedColor: '#ffffff', colors: ['#ffffff', '#ff0000', '#00ff00', '#0000ff', '#ff00ff'] }"
+                                class="flex items-center justify-between bg-black p-4 rounded-md text-white">
+                                <!-- Label -->
+                                <span class="text-base font-medium">Màu chữ</span>
+                            
+                                <!-- Color Picker Dropdown -->
+                                <div class="relative flex items-center">
+                                    <!-- Color Indicator -->
+                                    <div @click="isOpen = !isOpen" class="w-8 h-8 rounded-full shadow-md border-2 border-gray-300 cursor-pointer"
+                                        :style="{ backgroundColor: selectedColor }"></div>
+                            
+                                    <!-- Dropdown Icon -->
+                                    <span @click="isOpen = !isOpen" class="ml-2 text-white cursor-pointer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </span>
+                            
+                                    <!-- Dropdown List -->
+                                    <div x-show="isOpen" @click.away="isOpen = false"
+                                        class="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-10">
+                                        <ul class="py-2">
+                                            <template x-for="color in colors" :key="color">
+                                                <li @click="selectedColor = color; isOpen = false"
+                                                    class="flex items-center px-4 py-2 cursor-pointer hover:bg-gray-100">
+                                                    <div class="w-6 h-6 rounded-full border border-gray-300 mr-2"
+                                                        :style="{ backgroundColor: color }"></div>
+                                                    <span x-text="color"></span>
+                                                </li>
+                                            </template>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+
+                        </div>
+                    </div>
+                    <div class="fieldshet">
+                        <div class="field">
+                            <div x-data="{ isOpen: false, selectedColor: '#ffffff', colors: ['#ffffff', '#ff0000', '#00ff00', '#0000ff', '#ff00ff'] }"
+                                class="flex items-center justify-between bg-black p-4 rounded-md text-white">
+                                <!-- Label -->
+                                <span class="text-base font-medium">Màu nền</span>
+                    
+                                <!-- Color Picker Dropdown -->
+                                <div class="relative flex items-center">
+                                    <!-- Color Indicator -->
+                                    <div @click="isOpen = !isOpen"
+                                        class="w-8 h-8 rounded-full shadow-md border-2 border-gray-300 cursor-pointer"
+                                        :style="{ backgroundColor: selectedColor }"></div>
+                    
+                                    <!-- Dropdown Icon -->
+                                    <span @click="isOpen = !isOpen" class="ml-2 text-white cursor-pointer">
+                                        <svg xmlns="http://www.w3.org/2000/svg" class="h-5 w-5" viewBox="0 0 20 20" fill="currentColor">
+                                            <path fill-rule="evenodd"
+                                                d="M5.293 7.293a1 1 0 011.414 0L10 10.586l3.293-3.293a1 1 0 011.414 1.414l-4 4a1 1 0 01-1.414 0l-4-4a1 1 0 010-1.414z"
+                                                clip-rule="evenodd" />
+                                        </svg>
+                                    </span>
+                    
+                                    <!-- Dropdown List -->
+                                    <div x-show="isOpen" @click.away="isOpen = false"
+                                        class="absolute right-0 mt-2 w-40 bg-white rounded-md shadow-lg z-10">
+                                        <ul class="py-2">
+                                            <template x-for="color in colors" :key="color">
+                                                <li @click="selectedColor = color; isOpen = false"
+                                                    class="flex items-center px-4 py-2 cursor-pointer hover:bg-gray-100">
+                                                    <div class="w-6 h-6 rounded-full border border-gray-300 mr-2"
+                                                        :style="{ backgroundColor: color }"></div>
+                                                    <span x-text="color"></span>
+                                                </li>
+                                            </template>
+                                        </ul>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    
+        <button @click="closeSheet" class="mt-4 px-4 py-2 bg-red-500 text-white rounded">Close</button>
+    </div>
+</div>
+
+
+<script>
+    function sheetComponent() {
+        return {
+            isOpen: false,
+            translateY: 0,
+            initialY: 0,
+            isDragging: false,
+            touchStartY: 0,
+            isTouching: false,
+            activeTouch: null,
+            maxHeight: 300, // Max height the drawer can be dragged down
+            borderRadius: 0, // Starting border-radius
+            scaleBackground: 1, // Starting scale for background
+
+            // Open Sheet
+            openSheet() {
+                this.isOpen = true;
+                this.translateY = 0;
+                this.borderRadius = 0; // Reset border radius on open
+                this.scaleBackground = 1; // Reset background scale on open
+                localStorage.setItem('sheetState', 'open'); // Persist state across reloads
+            },
+
+            // Close Sheet
+            closeSheet() {
+                this.isOpen = false;
+                localStorage.setItem('sheetState', 'closed'); // Persist state across reloads
+            },
+
+            // Initialize dragging event
+            startDrag(event) {
+                const touch = event.touches ? event.touches[0] : event;
+
+                // If there's already an active touch, do nothing
+                if (this.isTouching) return;
+
+                this.isDragging = true;
+                this.activeTouch = touch.identifier;
+                this.touchStartY = touch.clientY - this.translateY;
+                this.isTouching = true; // Mark as touching
+            },
+
+            // Handle dragging motion
+            drag(event) {
+                if (!this.isDragging) return;
+
+                const touch = event.touches ? Array.from(event.touches).find(t => t.identifier === this.activeTouch) : event;
+
+                if (!touch) return;
+
+                // Calculate the new position of the drawer
+                this.translateY = Math.max(0, touch.clientY - this.touchStartY);
+
+                // Calculate the progress of the drag (as a percentage)
+                let dragProgress = this.translateY / this.maxHeight;
+
+                // Dynamically change the border-radius and background scale
+                this.borderRadius = Math.min(dragProgress * 60, 60); // Max border-radius is 60%
+                this.scaleBackground = Math.max(1 - dragProgress * 0.4, 0.6); // Decrease background scale as the drawer is dragged
+            },
+
+            // End dragging motion
+            endDrag() {
+                if (!this.isDragging) return;
+
+                this.isDragging = false;
+                this.isTouching = false; // Mark as no longer touching
+
+                // Close the sheet if dragged more than a certain threshold
+                if (this.translateY > 150) {
+                    this.closeSheet();
+                } else {
+                    this.translateY = 0; // Snap back to open position
+                }
+
+                // Clear active touch when drag ends
+                this.activeTouch = null;
+            },
+
+            // Retrieve persisted state from localStorage
+            init() {
+                if (localStorage.getItem('sheetState') === 'open') {
+                    this.isOpen = false;
+                }
+            }
+        };
+    }
+
+</script>

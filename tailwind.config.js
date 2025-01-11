@@ -36,6 +36,9 @@ module.exports = {
           DEFAULT: "#6B87F9",
         },
       },
+      backdropBlur: {
+        20: '20px', // Custom blur value
+      },
       gridTemplateColumns: {
         user: "repeat(auto-fit, minmax(76px, 1fr))",
       },
