@@ -94,23 +94,29 @@
                             </div>
                         </div>
                     </div>
-                    <div x-data="{ fontSize: 16 }" class="fieldshet">
-                        <div class="field">
-                            <div class="label mb-3 flex items-center justify-between">
-                                <span>Kích thước chữ</span>
-                                <span class="select-font text-sm text-grey-80" x-text="fontSize"></span>
-                            </div>
-                            <div class="control flex">
-                                <div class="length range__slider" data-min="4" data-max="32">
-                                    <input id="slider" type="range" min="4" max="32" x-model="fontSize" class="w-full" />
-                                </div>
-                            </div>
+                    <div x-data="{ fontSize: 14 }" class="flex flex-col items-start space-y-2 py-4 bg-black text-white">
+                        <!-- Label -->
+                        <div class="flex items-center justify-between w-full">
+                            <span>Kích thước chữ</span>
+                            <span class="text-sm" x-text="fontSize"></span>
+                        </div>
+                    
+                        <!-- Slider -->
+                        <div class="w-full relative">
+                            <input type="range" min="4" max="32" x-model="fontSize" />
+                            <!-- Custom track before thumb -->
+                            <div class="absolute top-0 left-0 h-[6px] bg-primary rounded-full pointer-events-none"
+                                :style="{ width: `${(fontSize - 4) / (32 - 4) * 100}%` }"></div>
+                            <!-- Custom thumb -->
+                            <div class="absolute top-1/2 left-0 w-5 h-5 -translate-x-1/2 -translate-y-1/2 bg-primary border-4 border-white rounded-full pointer-events-none"
+                                :style="{ left: `${(fontSize - 4) / (32 - 4) * 100}%` }"></div>
                         </div>
                     </div>
+
                     <div class="fieldshet">
                         <div class="field">
                             <div x-data="{ isOpen: false, selectedColor: '#ffffff', colors: ['#ffffff', '#ff0000', '#00ff00', '#0000ff', '#ff00ff'] }"
-                                class="flex items-center justify-between bg-black p-4 rounded-md text-white">
+                                class="flex items-center justify-between bg-black py-4 rounded-md text-white">
                                 <!-- Label -->
                                 <span class="text-base font-medium">Màu chữ</span>
                             
@@ -138,7 +144,7 @@
                                                     class="flex items-center px-4 py-2 cursor-pointer hover:bg-gray-100">
                                                     <div class="w-6 h-6 rounded-full border border-gray-300 mr-2"
                                                         :style="{ backgroundColor: color }"></div>
-                                                    <span x-text="color"></span>
+                                                    <span x-text="color" class="text-mainBlack uppercase"></span>
                                                 </li>
                                             </template>
                                         </ul>
@@ -151,7 +157,7 @@
                     <div class="fieldshet">
                         <div class="field">
                             <div x-data="{ isOpen: false, selectedColor: '#ffffff', colors: ['#ffffff', '#ff0000', '#00ff00', '#0000ff', '#ff00ff'] }"
-                                class="flex items-center justify-between bg-black p-4 rounded-md text-white">
+                                class="flex items-center justify-between bg-black py-4 rounded-md text-white">
                                 <!-- Label -->
                                 <span class="text-base font-medium">Màu nền</span>
                     
@@ -180,7 +186,7 @@
                                                     class="flex items-center px-4 py-2 cursor-pointer hover:bg-gray-100">
                                                     <div class="w-6 h-6 rounded-full border border-gray-300 mr-2"
                                                         :style="{ backgroundColor: color }"></div>
-                                                    <span x-text="color"></span>
+                                                    <span x-text="color" class="text-mainBlack uppercase"></span>
                                                 </li>
                                             </template>
                                         </ul>
@@ -194,7 +200,7 @@
             </div>
         </div>
     
-        <button @click="closeSheet" class="mt-4 px-4 py-2 bg-red-500 text-white rounded">Close</button>
+        <button @click="closeSheet" class="mt-4 btn btn-primary w-full">Áp dụng</button>
     </div>
 </div>
 
